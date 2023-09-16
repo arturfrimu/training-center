@@ -1,6 +1,8 @@
 package com.arturfrimu.training.center.service.product;
 
 import com.arturfrimu.training.center.domain.product.Product;
+import com.arturfrimu.training.center.exception.ProductNotInStockException;
+import com.arturfrimu.training.center.exception.ResourceNotFoundException;
 import com.arturfrimu.training.center.repository.product.ProductRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -11,8 +13,12 @@ import org.springframework.test.context.ActiveProfiles;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
+import static java.util.Collections.emptyList;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
@@ -36,6 +42,121 @@ class ProductServiceTest {
         assertThat(productById)
                 .usingRecursiveComparison()
                 .isEqualTo(IPHONE_X);
+    }
+
+    @Test
+    void productByIdNotFound() {
+        ResourceNotFoundException resourceNotFoundException = assertThrows(ResourceNotFoundException.class, () -> productService.findProductById(-1L));
+        assertThat(resourceNotFoundException.getMessage()).isEqualTo("Product not found with id: %s".formatted(-1L));
+    }
+
+    @Test
+    void findAllIPhones() {
+        List<Product> allIPhones = productService.findAllIPhones();
+
+        assertThat(allIPhones)
+                .usingRecursiveComparison()
+                .isEqualTo(
+                        List.of(
+                                IPHONE_X,
+                                IPHONE_14_PRO,
+                                IPHONE_12_MINI,
+                                IPHONE_11_PRO
+                        )
+                );
+    }
+
+    @Test
+    void findAllProductsCostingMoreThanGivenAmount() {
+        List<Product> allProductsCostingMoreThanGivenAmount = productService.findAllProductsCostingMoreThanGivenAmount(BigDecimal.valueOf(1000L));
+
+        assertThat(allProductsCostingMoreThanGivenAmount)
+                .usingRecursiveComparison()
+                .isEqualTo(
+                        List.of(
+                                IPHONE_14_PRO,
+                                SAMSUNG_GALAXY_S20,
+                                SAMSUNG_GALAXY_S21,
+                                ONEPLUS_9_PRO,
+                                HUAWEI_P40_PRO
+                        )
+                );
+    }
+
+    @Test
+    void calculateSumOfProductPricesByTheirId() {
+        BigDecimal sumOfProductPricesByTheirId = productService.calculateSumOfProductPricesByTheirId(IPHONE_X.getId(), IPHONE_14_PRO.getId());
+
+        assertThat(sumOfProductPricesByTheirId)
+                .usingRecursiveComparison()
+                .isEqualTo(
+                        IPHONE_X.getPrice().add(IPHONE_14_PRO.getPrice())
+                );
+    }
+
+    @Test
+    void whatIsTheMostExpensiveProductSuccess() {
+        Optional<Product> mostExpensiveProduct = productService.whatIsTheMostExpensiveProduct();
+
+        assertThat(mostExpensiveProduct)
+                .usingRecursiveComparison()
+                .isEqualTo(
+                        Optional.of(IPHONE_14_PRO)
+                );
+    }
+
+    @Test
+    void whatIsTheMostExpensiveProductFail() {
+        when(productRepository.findAll()).thenReturn(emptyList());
+
+        Optional<Product> mostExpensiveProduct = productService.whatIsTheMostExpensiveProduct();
+
+        assertThat(mostExpensiveProduct)
+                .usingRecursiveComparison()
+                .isEqualTo(Optional.empty());
+    }
+
+    @Test
+    void byeProduct() {
+        Product boughtProduct = productService.byeProduct(IPHONE_X);
+
+        assertThat(boughtProduct)
+                .usingRecursiveComparison()
+                .isEqualTo(IPHONE_X);
+    }
+
+    @Test
+    void productNotInStock() {
+        productService.byeProduct(SAMSUNG_GALAXY_S20);
+        productService.byeProduct(SAMSUNG_GALAXY_S20);
+        productService.byeProduct(SAMSUNG_GALAXY_S20);
+        productService.byeProduct(SAMSUNG_GALAXY_S20);
+        productService.byeProduct(SAMSUNG_GALAXY_S20);
+
+        ProductNotInStockException productNotInStockException = assertThrows(ProductNotInStockException.class, () -> productService.byeProduct(SAMSUNG_GALAXY_S20));
+        assertThat(productNotInStockException.getMessage()).isEqualTo("This product with id: %s is not in stock".formatted(SAMSUNG_GALAXY_S20.getId()));
+    }
+
+    @Test
+    void byeProductThatNotExists() {
+        Product inexistentProduct = new Product();
+
+        ResourceNotFoundException resourceNotFoundException = assertThrows(ResourceNotFoundException.class, () -> productService.byeProduct(inexistentProduct));
+        assertThat(resourceNotFoundException.getMessage()).isEqualTo("Product not found with id: %s".formatted(inexistentProduct.getId()));
+    }
+
+    @Test
+    void partitionProductsByPrice() {
+        Map<Boolean, List<Product>> productsByPriceThreshold = productService.partitionProductsByPrice(BigDecimal.valueOf(1000L));
+
+        assertThat(productsByPriceThreshold)
+                .usingRecursiveComparison()
+                .isEqualTo(
+                        Map.of(
+                                true, List.of(IPHONE_X, IPHONE_14_PRO, SAMSUNG_GALAXY_S20, SAMSUNG_GALAXY_S21, ONEPLUS_9_PRO, HUAWEI_P40_PRO),
+                                false, List.of(IPHONE_12_MINI, IPHONE_11_PRO, GOOGLE_PIXEL_5, XIAOMI_MI_11)
+                        )
+                );
     }
 
     private static final Product IPHONE_X = new Product(1L, "Iphone X", "The best phone", BigDecimal.valueOf(1000), 30);
