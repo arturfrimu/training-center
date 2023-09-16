@@ -12,7 +12,6 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 @Setter
 @ToString
 @NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name = "PRODUCT")
 public class Product {
@@ -31,4 +30,12 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "ORDER_ID")
     private Order order;
+
+    public Product(Long id, String name, String description, BigDecimal price, Integer stockQuantity) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.stockQuantity = stockQuantity;
+    }
 }

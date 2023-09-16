@@ -21,7 +21,6 @@ import static lombok.AccessLevel.NONE;
 @Setter
 @ToString(exclude = "products")
 @NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name = "ORDERS")
 public class Order {
@@ -54,6 +53,19 @@ public class Order {
     @Getter(NONE)
     @OneToMany(mappedBy = "order")
     private List<Product> products;
+
+    public Order(Long id, Customer customer, Address shippingAddress, String productName, BigDecimal productPrice, BigDecimal totalAmount, Integer quantity, OrderStatus orderStatus, PaymentMethod paymentMethod, LocalDateTime orderDateAndTime) {
+        this.id = id;
+        this.customer = customer;
+        this.shippingAddress = shippingAddress;
+        this.productName = productName;
+        this.productPrice = productPrice;
+        this.totalAmount = totalAmount;
+        this.quantity = quantity;
+        this.orderStatus = orderStatus;
+        this.paymentMethod = paymentMethod;
+        this.orderDateAndTime = orderDateAndTime;
+    }
 
     public List<Product> getProducts() {
         return unmodifiableList(products);
