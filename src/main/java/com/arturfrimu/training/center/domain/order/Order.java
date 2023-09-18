@@ -4,9 +4,11 @@ import com.arturfrimu.training.center.domain.address.Address;
 import com.arturfrimu.training.center.domain.customer.Customer;
 import com.arturfrimu.training.center.domain.product.Product;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,14 +36,6 @@ public class Order {
     @OneToOne
     @JoinColumn(name = "SHIPPING_ADDRESS", referencedColumnName = "ID")
     private Address shippingAddress;
-    @Column(name = "PRODUCT_NAME")
-    private String productName;
-    @Column(name = "PRODUCT_PRICE")
-    private BigDecimal productPrice;
-    @Column(name = "TOTAL_AMOUNT")
-    private BigDecimal totalAmount;
-    @Column(name = "QUANTITY")
-    private Integer quantity;
     @Enumerated(value = STRING)
     @Column(name = "ORDER_STATUS")
     private OrderStatus orderStatus;
@@ -54,17 +48,14 @@ public class Order {
     @OneToMany(mappedBy = "order")
     private List<Product> products;
 
-    public Order(Long id, Customer customer, Address shippingAddress, String productName, BigDecimal productPrice, BigDecimal totalAmount, Integer quantity, OrderStatus orderStatus, PaymentMethod paymentMethod, LocalDateTime orderDateAndTime) {
+    public Order(Long id, Customer customer, Address shippingAddress, OrderStatus orderStatus, PaymentMethod paymentMethod, LocalDateTime orderDateAndTime, List<Product> products) {
         this.id = id;
         this.customer = customer;
         this.shippingAddress = shippingAddress;
-        this.productName = productName;
-        this.productPrice = productPrice;
-        this.totalAmount = totalAmount;
-        this.quantity = quantity;
         this.orderStatus = orderStatus;
         this.paymentMethod = paymentMethod;
         this.orderDateAndTime = orderDateAndTime;
+        this.products = products;
     }
 
     public List<Product> getProducts() {

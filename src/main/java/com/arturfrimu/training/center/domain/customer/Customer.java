@@ -41,4 +41,14 @@ public class Customer {
         this.phoneNumber = phoneNumber;
         this.rating = rating;
     }
+
+    public Customer(Long id, String firstName, String lastName, String emailAddress, String phoneNumber, BigDecimal rating, Address customerAddress) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.emailAddress = emailAddress;
+        this.phoneNumber = phoneNumber;
+        this.rating = rating;
+        this.customerAddress = customerAddress;
+    }
 }
