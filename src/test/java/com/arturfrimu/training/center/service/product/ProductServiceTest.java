@@ -159,6 +159,17 @@ class ProductServiceTest {
                 );
     }
 
+    @Test
+    void findTheProductWithTheBiggestNameLength() {
+        Optional<Product> theProductWithTheBiggestNameLength = productService.findTheProductWithTheBiggestNameLength();
+
+        assertThat(theProductWithTheBiggestNameLength)
+                .usingRecursiveComparison()
+                .isEqualTo(
+                        Optional.of(SAMSUNG_GALAXY_S20)
+                );
+    }
+
     private static final Product IPHONE_X = new Product(1L, "Iphone X", "The best phone", BigDecimal.valueOf(1000), 30);
     private static final Product IPHONE_14_PRO = new Product(2L, "Iphone 14 PRO", "The most expensive phone", BigDecimal.valueOf(1400), 25);
     private static final Product SAMSUNG_GALAXY_S20 = new Product(3L, "Samsung Galaxy S20", "The worst phone", BigDecimal.valueOf(1101), 5);

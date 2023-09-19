@@ -86,4 +86,8 @@ public class ProductService {
         return allProducts.stream()
                 .collect(partitioningBy(product -> product.getPrice().compareTo(threshold) >= 0));
     }
+
+    public Optional<Product> findTheProductWithTheBiggestNameLength() {
+        return Optional.empty();
+    }
 }
