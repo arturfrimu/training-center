@@ -14,6 +14,7 @@ import org.springframework.test.context.ActiveProfiles;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
@@ -30,6 +31,19 @@ class AddressServiceTest {
     @BeforeEach
     void prepareDatabase() {
         when(addressRepository.findAll()).thenReturn(addressesToSave);
+    }
+
+    @Test
+    void findAddressById() {
+        var addresses = addressService.findAddressById(ION_CREANGA_10.getId());
+
+        assertThat(addresses)
+                .usingRecursiveComparison()
+                .isEqualTo(
+                        Optional.of(
+                                ION_CREANGA_10
+                        )
+                );
     }
 
     @ParameterizedTest

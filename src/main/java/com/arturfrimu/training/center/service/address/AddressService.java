@@ -5,10 +5,7 @@ import com.arturfrimu.training.center.repository.address.AddressRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.OptionalInt;
+import java.util.*;
 
 import static java.util.Collections.emptyList;
 import static java.util.stream.Collectors.*;
@@ -117,5 +114,13 @@ public class AddressService {
         List<Address> addresses = stateToAddresses.getOrDefault(country.toUpperCase(), emptyList());
 
         return addresses.size();
+    }
+
+    public Optional<Address> findAddressById(Long id) {
+        List<Address> allAddresses = addressRepository.findAll();
+
+        return allAddresses.stream()
+                .filter(address -> address.getId().equals(id))
+                .findFirst();
     }
 }
