@@ -2,7 +2,6 @@ package com.arturfrimu.training.center.service.address;
 
 import com.arturfrimu.training.center.domain.address.Address;
 import com.arturfrimu.training.center.repository.address.AddressRepository;
-import com.arturfrimu.training.center.service.address.AddressService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -210,6 +209,19 @@ class AddressServiceTest {
     void citiesNotFoundInACountry() {
         var citiesInACountry = addressService.howManyCitiesAreInACountry("Franta");
         assertThat(citiesInACountry).isZero();
+    }
+
+    @Test
+    void findAddressWithBiggestStreetNumberInACity() {
+        var addressWithBiggestStreetNumberInACity = addressService.findAddressWithBiggestStreetNumberInACity("Chisinau");
+
+        assertThat(addressWithBiggestStreetNumberInACity)
+                .usingRecursiveComparison()
+                .isEqualTo(
+                        Optional.of(
+                                TUDOR_VLADIMIRESCU_35
+                        )
+                );
     }
 
     private final static Address ION_CREANGA_10 = new Address(1L, "Ion Creanga", 10, "Chisinau", "Moldova", "1234AB");

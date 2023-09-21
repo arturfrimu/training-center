@@ -123,4 +123,12 @@ public class AddressService {
                 .filter(address -> address.getId().equals(id))
                 .findFirst();
     }
+
+    public Optional<Address> findAddressWithBiggestStreetNumberInACity(String city) {
+        List<Address> allAddresses = addressRepository.findAll();
+
+        return allAddresses.stream()
+                .filter(address -> address.getCity().equals(city))
+                .max(Comparator.comparing(Address::getStreetNumber));
+    }
 }
