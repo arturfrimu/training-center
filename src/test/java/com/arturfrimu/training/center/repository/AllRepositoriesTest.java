@@ -10,14 +10,16 @@ import com.arturfrimu.training.center.repository.order.OrderRepository;
 import com.arturfrimu.training.center.repository.product.ProductRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.transaction.annotation.Transactional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@DataJpaTest
-@ActiveProfiles("db-h2")
+@SpringBootTest
+@ActiveProfiles("db-postgress-test")
 class AllRepositoriesTest {
+
     @Autowired
     private AddressRepository addressRepository;
     @Autowired
@@ -28,6 +30,7 @@ class AllRepositoriesTest {
     private ProductRepository productRepository;
 
     @Test
+    @Transactional
     void testEntitiesMapping() {
         var customerAddress = addressRepository.save(new Address());
         var shippingAddress = addressRepository.save(new Address());

@@ -19,7 +19,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
-@ActiveProfiles("db-h2")
+@ActiveProfiles("db-postgress-test")
 class AddressServiceTest {
 
     @MockBean

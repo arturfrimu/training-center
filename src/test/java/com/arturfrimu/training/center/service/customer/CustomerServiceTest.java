@@ -23,7 +23,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
-@ActiveProfiles("db-h2")
+@ActiveProfiles("db-postgress-test")
 class CustomerServiceTest {
 
     @MockBean
