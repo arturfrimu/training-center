@@ -1,7 +1,8 @@
 package com.arturfrimu.training.center.service.address;
 
-import com.arturfrimu.training.center.entity.address.Address;
-import com.arturfrimu.training.center.repository.address.AddressRepository;
+import com.arturfrimu.training.center.streams.entity.address.Address;
+import com.arturfrimu.training.center.streams.repository.address.AddressRepository;
+import com.arturfrimu.training.center.streams.service.address.AddressService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

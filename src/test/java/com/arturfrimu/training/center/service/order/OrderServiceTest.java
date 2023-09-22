@@ -1,11 +1,12 @@
 package com.arturfrimu.training.center.service.order;
 
-import com.arturfrimu.training.center.entity.address.Address;
-import com.arturfrimu.training.center.entity.customer.Customer;
-import com.arturfrimu.training.center.entity.order.Order;
-import com.arturfrimu.training.center.entity.product.Product;
-import com.arturfrimu.training.center.exception.ResourceNotFoundException;
-import com.arturfrimu.training.center.repository.order.OrderRepository;
+import com.arturfrimu.training.center.streams.entity.address.Address;
+import com.arturfrimu.training.center.streams.entity.customer.Customer;
+import com.arturfrimu.training.center.streams.entity.order.Order;
+import com.arturfrimu.training.center.streams.entity.product.Product;
+import com.arturfrimu.training.center.streams.exception.ResourceNotFoundException;
+import com.arturfrimu.training.center.streams.repository.order.OrderRepository;
+import com.arturfrimu.training.center.streams.service.order.OrderService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

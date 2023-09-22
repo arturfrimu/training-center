@@ -1,6 +1,6 @@
-package com.arturfrimu.training.center.entity.customer;
+package com.arturfrimu.training.center.streams.entity.customer;
 
-import com.arturfrimu.training.center.entity.address.Address;
+import com.arturfrimu.training.center.streams.entity.address.Address;
 import jakarta.persistence.*;
 import lombok.*;
 

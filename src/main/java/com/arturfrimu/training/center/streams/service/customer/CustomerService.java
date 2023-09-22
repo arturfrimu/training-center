@@ -1,8 +1,8 @@
-package com.arturfrimu.training.center.service.customer;
+package com.arturfrimu.training.center.streams.service.customer;
 
-import com.arturfrimu.training.center.entity.customer.Customer;
-import com.arturfrimu.training.center.exception.ResourceNotFoundException;
-import com.arturfrimu.training.center.repository.customer.CustomerRepository;
+import com.arturfrimu.training.center.streams.entity.customer.Customer;
+import com.arturfrimu.training.center.streams.exception.ResourceNotFoundException;
+import com.arturfrimu.training.center.streams.repository.customer.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

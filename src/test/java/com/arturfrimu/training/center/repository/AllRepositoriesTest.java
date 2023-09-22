@@ -1,13 +1,13 @@
 package com.arturfrimu.training.center.repository;
 
-import com.arturfrimu.training.center.entity.address.Address;
-import com.arturfrimu.training.center.entity.customer.Customer;
-import com.arturfrimu.training.center.entity.order.Order;
-import com.arturfrimu.training.center.entity.product.Product;
-import com.arturfrimu.training.center.repository.address.AddressRepository;
-import com.arturfrimu.training.center.repository.customer.CustomerRepository;
-import com.arturfrimu.training.center.repository.order.OrderRepository;
-import com.arturfrimu.training.center.repository.product.ProductRepository;
+import com.arturfrimu.training.center.streams.entity.address.Address;
+import com.arturfrimu.training.center.streams.entity.customer.Customer;
+import com.arturfrimu.training.center.streams.entity.order.Order;
+import com.arturfrimu.training.center.streams.entity.product.Product;
+import com.arturfrimu.training.center.streams.repository.address.AddressRepository;
+import com.arturfrimu.training.center.streams.repository.customer.CustomerRepository;
+import com.arturfrimu.training.center.streams.repository.order.OrderRepository;
+import com.arturfrimu.training.center.streams.repository.product.ProductRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

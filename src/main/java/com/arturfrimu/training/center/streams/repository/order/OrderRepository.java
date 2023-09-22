@@ -1,6 +1,6 @@
-package com.arturfrimu.training.center.repository.order;
+package com.arturfrimu.training.center.streams.repository.order;
 
-import com.arturfrimu.training.center.entity.order.Order;
+import com.arturfrimu.training.center.streams.entity.order.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface OrderRepository extends JpaRepository<Order, Long> {

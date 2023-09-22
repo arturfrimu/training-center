@@ -1,6 +1,6 @@
-package com.arturfrimu.training.center.entity.product;
+package com.arturfrimu.training.center.streams.entity.product;
 
-import com.arturfrimu.training.center.entity.order.Order;
+import com.arturfrimu.training.center.streams.entity.order.Order;
 import jakarta.persistence.*;
 import lombok.*;
 

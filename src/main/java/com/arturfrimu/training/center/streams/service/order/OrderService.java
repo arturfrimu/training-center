@@ -1,9 +1,9 @@
-package com.arturfrimu.training.center.service.order;
+package com.arturfrimu.training.center.streams.service.order;
 
-import com.arturfrimu.training.center.entity.order.Order;
-import com.arturfrimu.training.center.entity.product.Product;
-import com.arturfrimu.training.center.exception.ResourceNotFoundException;
-import com.arturfrimu.training.center.repository.order.OrderRepository;
+import com.arturfrimu.training.center.streams.entity.order.Order;
+import com.arturfrimu.training.center.streams.entity.product.Product;
+import com.arturfrimu.training.center.streams.exception.ResourceNotFoundException;
+import com.arturfrimu.training.center.streams.repository.order.OrderRepository;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

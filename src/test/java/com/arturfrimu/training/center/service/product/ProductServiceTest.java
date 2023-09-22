@@ -1,9 +1,10 @@
 package com.arturfrimu.training.center.service.product;
 
-import com.arturfrimu.training.center.entity.product.Product;
-import com.arturfrimu.training.center.exception.ProductNotInStockException;
-import com.arturfrimu.training.center.exception.ResourceNotFoundException;
-import com.arturfrimu.training.center.repository.product.ProductRepository;
+import com.arturfrimu.training.center.streams.entity.product.Product;
+import com.arturfrimu.training.center.streams.exception.ProductNotInStockException;
+import com.arturfrimu.training.center.streams.exception.ResourceNotFoundException;
+import com.arturfrimu.training.center.streams.repository.product.ProductRepository;
+import com.arturfrimu.training.center.streams.service.product.ProductService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

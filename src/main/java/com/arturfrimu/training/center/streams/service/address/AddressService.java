@@ -1,7 +1,7 @@
-package com.arturfrimu.training.center.service.address;
+package com.arturfrimu.training.center.streams.service.address;
 
-import com.arturfrimu.training.center.entity.address.Address;
-import com.arturfrimu.training.center.repository.address.AddressRepository;
+import com.arturfrimu.training.center.streams.entity.address.Address;
+import com.arturfrimu.training.center.streams.repository.address.AddressRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -130,5 +130,9 @@ public class AddressService {
         return allAddresses.stream()
                 .filter(address -> address.getCity().equals(city))
                 .max(Comparator.comparing(Address::getStreetNumber));
+    }
+
+    public Address addAddress(Address address) {
+        return addressRepository.save(address);
     }
 }
