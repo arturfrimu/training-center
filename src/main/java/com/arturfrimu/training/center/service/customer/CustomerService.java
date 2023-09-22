@@ -1,6 +1,6 @@
 package com.arturfrimu.training.center.service.customer;
 
-import com.arturfrimu.training.center.domain.customer.Customer;
+import com.arturfrimu.training.center.entity.customer.Customer;
 import com.arturfrimu.training.center.exception.ResourceNotFoundException;
 import com.arturfrimu.training.center.repository.customer.CustomerRepository;
 import lombok.RequiredArgsConstructor;

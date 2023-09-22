@@ -1,6 +1,6 @@
 package com.arturfrimu.training.center.service.customer;
 
-import com.arturfrimu.training.center.domain.customer.Customer;
+import com.arturfrimu.training.center.entity.customer.Customer;
 import com.arturfrimu.training.center.repository.customer.CustomerRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

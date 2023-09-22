@@ -1,9 +1,9 @@
 package com.arturfrimu.training.center.service.order;
 
-import com.arturfrimu.training.center.domain.address.Address;
-import com.arturfrimu.training.center.domain.customer.Customer;
-import com.arturfrimu.training.center.domain.order.Order;
-import com.arturfrimu.training.center.domain.product.Product;
+import com.arturfrimu.training.center.entity.address.Address;
+import com.arturfrimu.training.center.entity.customer.Customer;
+import com.arturfrimu.training.center.entity.order.Order;
+import com.arturfrimu.training.center.entity.product.Product;
 import com.arturfrimu.training.center.exception.ResourceNotFoundException;
 import com.arturfrimu.training.center.repository.order.OrderRepository;
 import org.junit.jupiter.api.BeforeEach;

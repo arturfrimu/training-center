@@ -1,6 +1,6 @@
 package com.arturfrimu.training.center.service.product;
 
-import com.arturfrimu.training.center.domain.product.Product;
+import com.arturfrimu.training.center.entity.product.Product;
 import com.arturfrimu.training.center.exception.ProductNotInStockException;
 import com.arturfrimu.training.center.exception.ResourceNotFoundException;
 import com.arturfrimu.training.center.repository.product.ProductRepository;

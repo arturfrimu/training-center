@@ -1,4 +1,4 @@
-package com.arturfrimu.training.center.domain.address;
+package com.arturfrimu.training.center.entity.address;
 
 import jakarta.persistence.*;
 import lombok.*;

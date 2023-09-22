@@ -1,6 +1,6 @@
-package com.arturfrimu.training.center.domain.product;
+package com.arturfrimu.training.center.entity.product;
 
-import com.arturfrimu.training.center.domain.order.Order;
+import com.arturfrimu.training.center.entity.order.Order;
 import jakarta.persistence.*;
 import lombok.*;
 

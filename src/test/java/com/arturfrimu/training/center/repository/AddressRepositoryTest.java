@@ -1,6 +1,6 @@
 package com.arturfrimu.training.center.repository;
 
-import com.arturfrimu.training.center.domain.address.Address;
+import com.arturfrimu.training.center.entity.address.Address;
 import com.arturfrimu.training.center.repository.address.AddressRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

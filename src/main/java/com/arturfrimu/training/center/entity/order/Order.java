@@ -1,8 +1,8 @@
-package com.arturfrimu.training.center.domain.order;
+package com.arturfrimu.training.center.entity.order;
 
-import com.arturfrimu.training.center.domain.address.Address;
-import com.arturfrimu.training.center.domain.customer.Customer;
-import com.arturfrimu.training.center.domain.product.Product;
+import com.arturfrimu.training.center.entity.address.Address;
+import com.arturfrimu.training.center.entity.customer.Customer;
+import com.arturfrimu.training.center.entity.product.Product;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
