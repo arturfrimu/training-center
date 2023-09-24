@@ -131,8 +131,4 @@ public class AddressService {
                 .filter(address -> address.getCity().equals(city))
                 .max(Comparator.comparing(Address::getStreetNumber));
     }
-
-    public Address addAddress(Address address) {
-        return addressRepository.save(address);
-    }
 }
