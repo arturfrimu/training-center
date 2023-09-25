@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
-@ActiveProfiles("db-postgress-test")
+@ActiveProfiles("db-h2")
 class AllRepositoriesTest {
 
     @Autowired

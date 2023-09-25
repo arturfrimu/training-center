@@ -1,16 +1,15 @@
 package com.arturfrimu.training.center.streams.service.customer;
 
 import com.arturfrimu.training.center.streams.entity.customer.Customer;
-import com.arturfrimu.training.center.streams.exception.ResourceNotFoundException;
 import com.arturfrimu.training.center.streams.repository.customer.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.stream.Collectors;
+
+import static java.util.Collections.emptyList;
 
 @Service
 @RequiredArgsConstructor
@@ -21,83 +20,68 @@ public class CustomerService {
     public Optional<Customer> findById(Long id) {
         List<Customer> allCustomers = customerRepository.findAll();
 
-        return allCustomers.stream()
-                .filter(customer -> customer.getId().equals(id))
-                .findFirst();
+        // TODO: 25.09.2023
+
+        return Optional.empty();
     }
 
     public Optional<Customer> findCustomerByEmailAddress(String email) {
         List<Customer> allCustomers = customerRepository.findAll();
 
-        return allCustomers.stream()
-                .filter(customer -> customer.getEmailAddress().equals(email))
-                .findFirst();
+        // TODO: 25.09.2023
+
+        return Optional.empty();
     }
 
     public List<String> extractCustomersFullNames() {
         List<Customer> allCustomers = customerRepository.findAll();
 
-        return allCustomers.stream()
-                .map(customer -> customer.getFirstName() + " - " + customer.getLastName())
-                .toList();
+        // TODO: 25.09.2023
+
+        return emptyList();
     }
 
     public String makeFirstNameBeautifully(Long id) {
         List<Customer> allCustomers = customerRepository.findAll();
 
-        Customer customer = allCustomers.stream()
-                .filter(currentCustomer -> currentCustomer.getId().equals(id))
-                .findFirst()
-                .orElseThrow(() -> new ResourceNotFoundException("Customer not found with id: %s".formatted(id)));
+        // TODO: 25.09.2023
 
-        String[] splitCustomerFirstName = customer.getFirstName().toUpperCase().split("");
-
-        return String.join("-", splitCustomerFirstName);
+        return null;
     }
 
     public String removeDashesFromPhoneNumber(Long id) {
         List<Customer> allCustomers = customerRepository.findAll();
 
-        Customer customer = allCustomers.stream()
-                .filter(currentCustomer -> currentCustomer.getId().equals(id))
-                .findFirst()
-                .orElseThrow(() -> new ResourceNotFoundException("Customer not found with id: %s".formatted(id)));
+        // TODO: 25.09.2023
 
-        return customer.getPhoneNumber().replace("-", "");
+        return null;
     }
 
     public boolean existsEmailEndWith(String endOfEmail) {
         List<Customer> allCustomers = customerRepository.findAll();
 
-        return allCustomers.stream().anyMatch(customer -> customer.getEmailAddress().endsWith(endOfEmail));
+        return Boolean.FALSE;
     }
 
     public boolean isEmailValid(String email) {
-        if (!email.contains("@")) {
-            throw new IllegalArgumentException("Invalid email. @ is mandatory");
-        }
-        String[] splitEmail = email.split("@");
-        if (!splitEmail[0].contains(".")) {
-            throw new IllegalArgumentException("Invalid email. First part of email needs to contain .");
-        }
-        if (!splitEmail[1].contains(".")) {
-            throw new IllegalArgumentException("Invalid email. Second part of email needs to contain .");
-        }
+        // TODO: 25.09.2023
 
-        return true;
+        return Boolean.FALSE;
     }
 
     public List<Customer> findCustomersWithTopRating5() {
         List<Customer> allCustomers = customerRepository.findAll();
 
-        return allCustomers.stream()
-                .filter(customer -> customer.getRating().equals(BigDecimal.valueOf(5)))
-                .toList();
+        // TODO: 25.09.2023
+
+        return emptyList();
     }
 
     public Map<Boolean, List<Customer>> splitIntoTopRatedAndBadRatedCustomers() {
         List<Customer> allCustomers = customerRepository.findAll();
 
-        return allCustomers.stream().collect(Collectors.partitioningBy(customer -> customer.getRating().compareTo(BigDecimal.valueOf(3)) > 0));
+        // TODO: 25.09.2023
+
+        return Map.of();
     }
 }

@@ -1,37 +1,26 @@
 package com.arturfrimu.training.center.spring.rest.controller.car;
 
 import com.arturfrimu.training.center.spring.rest.entity.car.Car;
-import com.arturfrimu.training.center.spring.rest.service.car.car.CarService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
-@RequiredArgsConstructor
-@RequestMapping("/car")
+// TODO: 25.09.2023 Completeaza cu tot ce crezi tu ca este necesar pentru ca sa treaca testele
 public class CarController {
 
-    private final CarService carService;
-
-    @PostMapping
-    public ResponseEntity<Long> addCar(@RequestBody Car car) {
-        return ResponseEntity.ok(carService.addCar(car).getId());
+    public ResponseEntity<Long> addCar() {
+        return null;
     }
 
-    @GetMapping
     public ResponseEntity<List<Car>> getAllCars() {
-        return ResponseEntity.ok(carService.findAllCars());
+        return null;
     }
 
-    @GetMapping("/{carId}")
-    public ResponseEntity<Car> getCar(@PathVariable Long carId) {
-        return ResponseEntity.ok(carService.findCarById(carId));
+    public ResponseEntity<Car> getCar() {
+        return null;
     }
 
-    @DeleteMapping("/{carId}")
-    public ResponseEntity<Long> deleteCar(@PathVariable Long carId) {
-        return ResponseEntity.ok(carService.deleteCar(carId));
+    public ResponseEntity<Long> deleteCar() {
+        return null;
     }
 }

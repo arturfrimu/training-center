@@ -10,7 +10,7 @@ import org.springframework.test.context.ActiveProfiles;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DataJpaTest
-@ActiveProfiles("db-postgress-test")
+@ActiveProfiles("db-h2")
 class AddressRepositoryTest {
 
     @Autowired

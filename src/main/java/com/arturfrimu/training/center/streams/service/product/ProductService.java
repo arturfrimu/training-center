@@ -1,20 +1,17 @@
 package com.arturfrimu.training.center.streams.service.product;
 
 import com.arturfrimu.training.center.streams.entity.product.Product;
-import com.arturfrimu.training.center.streams.exception.ProductNotInStockException;
-import com.arturfrimu.training.center.streams.exception.ResourceNotFoundException;
 import com.arturfrimu.training.center.streams.repository.product.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.function.BinaryOperator;
 
-import static java.util.stream.Collectors.partitioningBy;
+import static java.util.Collections.emptyList;
+import static java.util.Optional.empty;
 
 @Service
 @RequiredArgsConstructor
@@ -25,69 +22,60 @@ public class ProductService {
     public Product findProductById(long id) {
         List<Product> allProducts = productRepository.findAll();
 
-        return allProducts.stream()
-                .filter(product -> product.getId().equals(id))
-                .findFirst()
-                .orElseThrow(() -> new ResourceNotFoundException("Product not found with id: %s".formatted(id)));
+        // TODO: 25.09.2023
+
+        return null;
     }
 
     public List<Product> findAllIPhones() {
         List<Product> allProducts = productRepository.findAll();
 
-        return allProducts.stream()
-                .filter(product -> product.getName().toUpperCase().contains("IPHONE"))
-                .toList();
+        // TODO: 25.09.2023
+
+        return emptyList();
     }
 
     public List<Product> findAllProductsCostingMoreThanGivenAmount(BigDecimal amount) {
         List<Product> allProducts = productRepository.findAll();
 
-        return allProducts.stream()
-                .filter(product -> product.getPrice().compareTo(amount) > 0)
-                .toList();
+        // TODO: 25.09.2023
+
+        return emptyList();
     }
 
     public BigDecimal calculateSumOfProductPricesByTheirId(Long... ids) {
         List<Product> allProducts = productRepository.findAll();
 
-        return allProducts.stream()
-                .filter(product -> Arrays.asList(ids).contains(product.getId()))
-                .map(Product::getPrice)
-                .reduce(BigDecimal.valueOf(0), BigDecimal::add);
+        // TODO: 25.09.2023
+
+        return BigDecimal.ZERO;
     }
 
     public Optional<Product> whatIsTheMostExpensiveProduct() {
         List<Product> allProducts = productRepository.findAll();
 
-        BinaryOperator<Product> productBinaryOperator = (currentProduct, nextProduct) -> currentProduct.getPrice().compareTo(nextProduct.getPrice()) > 0 ? currentProduct : nextProduct;
+        // TODO: 25.09.2023
 
-        return allProducts.stream().reduce(productBinaryOperator);
+        return empty();
     }
 
     public Product byeProduct(Product product) {
         List<Product> allProducts = productRepository.findAll();
 
-        Product productById = allProducts.stream()
-                .filter(currentProduct -> currentProduct.getId().equals(product.getId()))
-                .findFirst()
-                .orElseThrow(() -> new ResourceNotFoundException("Product not found with id: %s".formatted(product.getId())));
+        // TODO: 25.09.2023
 
-        if (productById.getStockQuantity() > 0) {
-            productById.setStockQuantity(productById.getStockQuantity() - 1);
-            return productById;
-        }
-
-        throw new ProductNotInStockException("This product with id: %s is not in stock".formatted(product.getId()));
+        return null;
     }
 
     public Map<Boolean, List<Product>> partitionProductsByPrice(BigDecimal threshold) {
         List<Product> allProducts = productRepository.findAll();
 
-        return allProducts.stream()
-                .collect(partitioningBy(product -> product.getPrice().compareTo(threshold) >= 0));
+        // TODO: 25.09.2023
+
+        return Map.of();
     }
 
     public Optional<Product> findTheProductWithTheBiggestNameLength() {
-        return Optional.empty();
+        return empty();
     }
 }

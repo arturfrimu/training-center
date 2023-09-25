@@ -18,7 +18,7 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 import static org.springframework.http.HttpStatus.OK;
 
 @SpringBootTest(webEnvironment = RANDOM_PORT)
-@ActiveProfiles("db-postgress-test")
+@ActiveProfiles("db-h2")
 class CarControllerIntegrationTest {
 
     @LocalServerPort

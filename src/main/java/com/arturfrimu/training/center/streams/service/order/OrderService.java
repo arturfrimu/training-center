@@ -1,19 +1,16 @@
 package com.arturfrimu.training.center.streams.service.order;
 
 import com.arturfrimu.training.center.streams.entity.order.Order;
-import com.arturfrimu.training.center.streams.entity.product.Product;
-import com.arturfrimu.training.center.streams.exception.ResourceNotFoundException;
 import com.arturfrimu.training.center.streams.repository.order.OrderRepository;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.util.*;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
-
-import static java.util.Collections.emptyList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -24,52 +21,40 @@ public class OrderService {
     public Optional<Order> findOrderById(@NonNull final Long id) {
         List<Order> allOrders = orderRepository.findAll();
 
-        return allOrders.stream()
-                .filter(order -> order.getId().equals(id))
-                .findFirst();
+        // TODO: 25.09.2023
+
+        return Optional.empty();
     }
 
     public List<Order> findAllOrdersDidByCustomer(Long customerId) {
         List<Order> allOrders = orderRepository.findAll();
 
-        return allOrders.stream()
-                .filter(order -> order.getCustomer().getId().equals(customerId))
-                .toList();
+        // TODO: 25.09.2023
+
+        return Collections.emptyList();
     }
 
     public BigDecimal calculateTotalAmountOfOrder(Long orderId) {
         List<Order> allOrders = orderRepository.findAll();
 
-        Order order = allOrders.stream()
-                .filter(currentOrder -> currentOrder.getCustomer().getId().equals(orderId))
-                .findFirst()
-                .orElseThrow(() -> new ResourceNotFoundException("Order not found with id: %s".formatted(orderId)));
+        // TODO: 25.09.2023
 
-        return order.getProducts().stream()
-                .map(Product::getPrice)
-                .reduce(BigDecimal.ZERO, BigDecimal::add);
+        return BigDecimal.ZERO;
     }
 
     public Map<Order.OrderStatus, List<Order>> groupOrdersByOrderStatus() {
         List<Order> allOrders = orderRepository.findAll();
 
-        Map<Order.OrderStatus, List<Order>> orderStatusToOrders = allOrders.stream()
-                .collect(Collectors.groupingBy(Order::getOrderStatus));
+        // TODO: 25.09.2023
 
-        Arrays.asList(Order.OrderStatus.values())
-                .forEach(status -> orderStatusToOrders.putIfAbsent(status, emptyList()));
-
-        return orderStatusToOrders;
+        return Map.of();
     }
 
     public Map<Boolean, List<Order>> findAllOrdersThatHaveTotalAmountGreaterThan(BigDecimal totalAmount) {
         List<Order> allOrders = orderRepository.findAll();
 
-        Predicate<Order> orderPredicate = order -> order.getProducts()
-                .stream()
-                .map(Product::getPrice)
-                .reduce(BigDecimal.ZERO, BigDecimal::add).compareTo(totalAmount) > 0;
+        // TODO: 25.09.2023
 
-        return allOrders.stream().collect(Collectors.partitioningBy(orderPredicate));
+        return Map.of();
     }
 }

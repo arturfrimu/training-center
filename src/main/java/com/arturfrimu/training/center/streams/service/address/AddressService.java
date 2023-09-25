@@ -5,10 +5,12 @@ import com.arturfrimu.training.center.streams.repository.address.AddressReposito
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 import static java.util.Collections.emptyList;
-import static java.util.stream.Collectors.*;
+import static java.util.Optional.empty;
 
 @Service
 @RequiredArgsConstructor
@@ -19,116 +21,105 @@ public class AddressService {
     public List<Address> findAllAddressesByStreet(String street) {
         List<Address> allAddresses = addressRepository.findAll();
 
-        return allAddresses
-                .stream()
-                .filter(address -> address.getStreet().equalsIgnoreCase(street))
-                .toList();
+        // TODO: 25.09.2023
+
+        return emptyList();
     }
 
     public List<Address> findAllAddressesByStreetContaining(String street) {
         List<Address> allAddresses = addressRepository.findAll();
 
-        return allAddresses
-                .stream()
-                .filter(address -> address.getStreet().toUpperCase().contains(street.toUpperCase()))
-                .toList();
+        // TODO: 25.09.2023
+
+        return emptyList();
     }
 
     public List<Address> findAllAddressesByStreetNumberBetween(int firstNumber, int secondNumber) {
         List<Address> allAddresses = addressRepository.findAll();
 
-        return allAddresses
-                .stream()
-                .filter(address -> address.getStreetNumber().compareTo(firstNumber) > 0 && address.getStreetNumber().compareTo(secondNumber) < 0)
-                .toList();
+        // TODO: 25.09.2023
+
+        return emptyList();
     }
 
     public boolean allAddressesOnStreetHaveEvenNumbers(String street) {
         List<Address> allAddresses = addressRepository.findAll();
 
-        return allAddresses
-                .stream()
-                .filter(address -> address.getStreet().toUpperCase().contains(street.toUpperCase()))
-                .allMatch(address -> address.getStreetNumber() % 2 == 0);
+        // TODO: 25.09.2023
+
+        return Boolean.FALSE;
     }
 
     public boolean noAddressWithoutPostalCode() {
         List<Address> allAddresses = addressRepository.findAll();
 
-        return allAddresses
-                .stream()
-                .allMatch(address -> Objects.nonNull(address.getPostalCode()));
+        // TODO: 25.09.2023
+
+        return Boolean.FALSE;
     }
 
     // cea mai grea dintre toate
     public List<Address> findAddressesByLongestStreetName() {
         List<Address> allAddresses = addressRepository.findAll();
 
-        Map<Integer, List<Address>> collect = allAddresses.stream().collect(groupingBy(a -> a.getStreet().length()));
-        OptionalInt max = collect.keySet().stream().mapToInt(Integer::intValue).max();
+        // TODO: 25.09.2023
 
-        return max.isPresent() ? collect.get(max.getAsInt()) : emptyList();
+        return emptyList();
     }
 
     public List<Address> findAllAddressesFromSpecificCity(String city) {
         List<Address> allAddresses = addressRepository.findAll();
 
-        return allAddresses.stream()
-                .filter(address -> address.getCity().equalsIgnoreCase(city))
-                .toList();
+        // TODO: 25.09.2023
+
+        return emptyList();
     }
 
     public List<Address> findAddressesWithShortestStreetName() {
         List<Address> allAddresses = addressRepository.findAll();
 
-        Map<Integer, List<Address>> streetNameLengthToAddresses = allAddresses.stream().collect(groupingBy(a -> a.getStreet().length()));
-        OptionalInt max = streetNameLengthToAddresses.keySet().stream().mapToInt(Integer::intValue).min();
+        // TODO: 25.09.2023
 
-        return max.isPresent() ? streetNameLengthToAddresses.get(max.getAsInt()) : emptyList();
+        return emptyList();
     }
 
     public Map<String, Integer> countAddressesBySpecificStreetLength() {
         List<Address> allAddresses = addressRepository.findAll();
 
-        return allAddresses.stream()
-                .collect(groupingBy(Address::getStreet, collectingAndThen(toList(), addresses -> addresses.get(0).getStreet().length())));
+        // TODO: 25.09.2023
+
+        return Map.of();
     }
 
     public List<String> findAllCitiesInACountry(String country) {
         List<Address> allAddresses = addressRepository.findAll();
 
-        Map<String, List<Address>> stateToAddresses = allAddresses.stream()
-                .collect(groupingBy(address -> address.getState().toUpperCase()));
+        // TODO: 25.09.2023
 
-        List<Address> addresses = stateToAddresses.getOrDefault(country.toUpperCase(), emptyList());
-
-        return addresses.stream().map(Address::getCity).toList();
+        return emptyList();
     }
 
     public Integer howManyCitiesAreInACountry(String country) {
         List<Address> allAddresses = addressRepository.findAll();
 
-        Map<String, List<Address>> stateToAddresses = allAddresses.stream()
-                .collect(groupingBy(address -> address.getState().toUpperCase()));
+        // TODO: 25.09.2023
 
-        List<Address> addresses = stateToAddresses.getOrDefault(country.toUpperCase(), emptyList());
-
-        return addresses.size();
+        return null;
     }
 
     public Optional<Address> findAddressById(Long id) {
         List<Address> allAddresses = addressRepository.findAll();
 
-        return allAddresses.stream()
-                .filter(address -> address.getId().equals(id))
-                .findFirst();
+        // TODO: 25.09.2023
+
+        return empty();
     }
 
     public Optional<Address> findAddressWithBiggestStreetNumberInACity(String city) {
         List<Address> allAddresses = addressRepository.findAll();
 
-        return allAddresses.stream()
-                .filter(address -> address.getCity().equals(city))
-                .max(Comparator.comparing(Address::getStreetNumber));
+        // TODO: 25.09.2023
+
+        return empty();
     }
 }
