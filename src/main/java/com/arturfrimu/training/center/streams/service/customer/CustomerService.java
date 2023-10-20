@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import static java.lang.Boolean.FALSE;
+import static java.lang.Boolean.TRUE;
 import static java.util.Collections.emptyList;
 
 @Service
@@ -19,10 +21,9 @@ public class CustomerService {
 
     public Optional<Customer> findById(Long id) {
         List<Customer> allCustomers = customerRepository.findAll();
-
-        // TODO: 25.09.2023
-
-        return Optional.empty();
+        return allCustomers.stream()
+                .filter(customer -> customer.getId().equals(id))
+                .findFirst();
     }
 
     public Optional<Customer> findCustomerByEmailAddress(String email) {
@@ -60,28 +61,28 @@ public class CustomerService {
     public boolean existsEmailEndWith(String endOfEmail) {
         List<Customer> allCustomers = customerRepository.findAll();
 
-        return Boolean.FALSE;
+        return allCustomers.stream().anyMatch((c) -> c.getEmailAddress().endsWith(endOfEmail));
     }
 
-    public boolean isEmailValid(String email) {
-        // TODO: 25.09.2023
+        public boolean isEmailValid (String email){
+            // TODO: 25.09.2023
 
-        return Boolean.FALSE;
+            return FALSE;
+        }
+
+        public List<Customer> findCustomersWithTopRating5 () {
+            List<Customer> allCustomers = customerRepository.findAll();
+
+            // TODO: 25.09.2023
+
+            return emptyList();
+        }
+
+        public Map<Boolean, List<Customer>> splitIntoTopRatedAndBadRatedCustomers () {
+            List<Customer> allCustomers = customerRepository.findAll();
+
+            // TODO: 25.09.2023
+
+            return Map.of();
+        }
     }
-
-    public List<Customer> findCustomersWithTopRating5() {
-        List<Customer> allCustomers = customerRepository.findAll();
-
-        // TODO: 25.09.2023
-
-        return emptyList();
-    }
-
-    public Map<Boolean, List<Customer>> splitIntoTopRatedAndBadRatedCustomers() {
-        List<Customer> allCustomers = customerRepository.findAll();
-
-        // TODO: 25.09.2023
-
-        return Map.of();
-    }
-}
