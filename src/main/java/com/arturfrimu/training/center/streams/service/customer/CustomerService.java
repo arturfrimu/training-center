@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
@@ -34,10 +35,9 @@ public class CustomerService {
 
     public List<String> extractCustomersFullNames() {
         List<Customer> allCustomers = customerRepository.findAll();
-
-        // TODO: 25.09.2023
-
-        return emptyList();
+        return allCustomers.stream()
+                .map(customer -> customer.getFirstName().concat(" - ").concat(customer.getLastName()))
+                .collect(Collectors.toList());
     }
 
     public String makeFirstNameBeautifully(Long id) {
