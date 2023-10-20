@@ -43,12 +43,24 @@ public class CustomerService {
     public String makeFirstNameBeautifully(Long id) {
         List<Customer> allCustomers = customerRepository.findAll();
 
-        // TODO: 25.09.2023
-
-        return null;
+        Customer customer = customerRepository.findById(id).orElseThrow(() -> new RuntimeException("Customer not found"));
+        String firstName = customer.getFirstName();
+        char[] chars = firstName.toCharArray();
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < chars.length; i++) {
+            stringBuilder.append(chars[i]);
+            if (i < chars.length - 1) {
+                stringBuilder.append("-");
+            }
+        }
+        return stringBuilder.toString();
+        // method 2
+//       return firstName.chars()
+//                .mapToObj(c -> String.valueOf((char) c))
+//                .collect(Collectors.joining("-"));
     }
 
-    public String removeDashesFromPhoneNumber(Long id) {
+        public String removeDashesFromPhoneNumber(Long id) {
         List<Customer> allCustomers = customerRepository.findAll();
 
         // TODO: 25.09.2023
