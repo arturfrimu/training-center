@@ -28,10 +28,8 @@ public class CustomerService {
 
     public Optional<Customer> findCustomerByEmailAddress(String email) {
         List<Customer> allCustomers = customerRepository.findAll();
-
-        // TODO: 25.09.2023
-
-        return Optional.empty();
+        return allCustomers.stream().filter(customer -> customer.getEmailAddress().equals(email))
+                .findFirst();
     }
 
     public List<String> extractCustomersFullNames() {
