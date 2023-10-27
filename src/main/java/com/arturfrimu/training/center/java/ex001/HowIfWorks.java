@@ -1,4 +1,4 @@
-package com.arturfrimu.training.center.java.sintax.ifs;
+package com.arturfrimu.training.center.java.ex001;
 
 public class HowIfWorks {
     public String isAdult(int age) {
