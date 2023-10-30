@@ -7,6 +7,12 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
+/**
+ * @see <a href=https://www.geeksforgeeks.org/functional-interfaces-java/?ref=lbp">Functional Interfaces in Java</a>
+ * @see <a href="https://www.geeksforgeeks.org/java-8-consumer-interface-in-java-with-examples/">Consumer Interface</a>
+ * @see <a href="https://www.geeksforgeeks.org/function-interface-in-java-with-examples/?ref=lbp">Function Interface</a>
+ * @see <a href="https://www.javatpoint.com/java-8-method-reference">Method reference</a>
+ */
 @Slf4j
 class HowStreamMethodMapWorksTest {
 
