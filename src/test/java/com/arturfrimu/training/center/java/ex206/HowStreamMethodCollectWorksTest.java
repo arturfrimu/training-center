@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @Slf4j
 class HowStreamMethodCollectWorksTest {
@@ -25,5 +26,18 @@ class HowStreamMethodCollectWorksTest {
         assertThat(result.getClass()).isEqualTo(ArrayList.class);
 
         assertThat(result).isEqualTo(List.of("one", "two", "three", "four"));
+    }
+
+    @Test
+    void testCollectorsToUnmodifiableList() {
+        List<String> strings = List.of("one", "two", "three");
+
+        List<String> result = strings
+                .stream()
+                .collect(Collectors.toUnmodifiableList()); // equivalent with .toList();
+
+        assertThrows(UnsupportedOperationException.class, () -> result.add("four")); // Unmodifiable List
+
+        assertThat(result).isEqualTo(List.of("one", "two", "three"));
     }
 }
