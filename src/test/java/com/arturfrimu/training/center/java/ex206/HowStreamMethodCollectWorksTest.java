@@ -176,4 +176,26 @@ class HowStreamMethodCollectWorksTest {
                 )
         );
     }
+
+    @Test
+    void testCollectorsGroupingToUnmodifiableMap() {
+        List<String> strings = List.of("apple", "apple", "pear", "quince", "plum", "plum");
+
+        Map<Integer, List<String>> result = strings
+                .stream()
+                .collect(Collectors.collectingAndThen(
+                        Collectors.groupingBy(String::length, Collectors.toList()),
+                        Collections::unmodifiableMap)
+                );
+
+        assertThrows(UnsupportedOperationException.class, () -> result.put(10, List.of("strawberry"))); // Unmodifiable map
+
+        assertThat(result).isEqualTo(
+                Map.of(
+                        5, List.of("apple", "apple"),
+                        4, List.of("pear", "plum", "plum"),
+                        6, List.of("quince")
+                )
+        );
+    }
 }
