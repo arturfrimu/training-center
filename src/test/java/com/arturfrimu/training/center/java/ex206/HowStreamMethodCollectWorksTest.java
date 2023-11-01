@@ -3,10 +3,7 @@ package com.arturfrimu.training.center.java.ex206;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -82,5 +79,31 @@ class HowStreamMethodCollectWorksTest {
         assertThrows(UnsupportedOperationException.class, () -> result.add("four")); // Unmodifiable Set
 
         assertThat(result).isEqualTo(Set.of("one", "two", "three"));
+    }
+
+    @Test
+    void testCollectorsToMap() {
+        List<String> strings = List.of("apple", "pear", "quince", "plum");
+
+        Map<String, Integer> result = strings
+                .stream()
+                .collect(Collectors.toMap(
+                        str -> str,               // keyMapper
+                        String::length        // valueMapper
+                ));
+
+        assertThat(result.getClass()).isEqualTo(HashMap.class);
+
+        result.put("banana", 6); // Modifiable map
+
+        assertThat(result).isEqualTo(
+                Map.of(
+                        "banana", 6,
+                        "apple", 5,
+                        "pear", 4,
+                        "quince", 6,
+                        "plum", 4
+                )
+        );
     }
 }
