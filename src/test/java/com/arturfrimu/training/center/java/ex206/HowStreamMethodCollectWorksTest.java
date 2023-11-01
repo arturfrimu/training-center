@@ -40,4 +40,17 @@ class HowStreamMethodCollectWorksTest {
 
         assertThat(result).isEqualTo(List.of("one", "two", "three"));
     }
+
+    @Test
+    void testToList() {
+        List<String> strings = List.of("one", "two", "three");
+
+        List<String> result = strings
+                .stream()
+                .toList(); // equivalent with .collect(Collectors.toUnmodifiableList());
+
+        assertThrows(UnsupportedOperationException.class, () -> result.add("four")); // Unmodifiable List
+
+        assertThat(result).isEqualTo(List.of("one", "two", "three"));
+    }
 }
