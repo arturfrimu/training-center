@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
+import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -116,6 +117,30 @@ class HowStreamMethodCollectWorksTest {
                 .collect(Collectors.toUnmodifiableMap(
                         str -> str,               // keyMapper
                         String::length        // valueMapper
+                ));
+
+        assertThrows(UnsupportedOperationException.class, () -> result.put("banana", 6)); // Unmodifiable map
+
+        assertThat(result).isEqualTo(
+                Map.of(
+                        "apple", 5,
+                        "pear", 4,
+                        "quince", 6,
+                        "plum", 4
+                )
+        );
+    }
+
+    @Test
+    void testCollectorsToUnmodifiableMapWithComparator() {
+        List<String> strings = List.of("apple", "apple", "pear", "quince", "plum", "plum");
+
+        Map<String, Integer> result = strings
+                .stream()
+                .collect(Collectors.toUnmodifiableMap(
+                        str -> str,               // keyMapper
+                        String::length,       // valueMapper
+                        BinaryOperator.minBy((a, b) -> a)
                 ));
 
         assertThrows(UnsupportedOperationException.class, () -> result.put("banana", 6)); // Unmodifiable map
