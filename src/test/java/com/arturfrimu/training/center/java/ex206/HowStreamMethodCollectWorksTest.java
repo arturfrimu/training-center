@@ -198,4 +198,18 @@ class HowStreamMethodCollectWorksTest {
                 )
         );
     }
+
+    @Test
+    void testCollectorsPartitioningBy() {
+        List<String> strings = List.of("apple", "apple", "pear", "quince", "plum", "plum");
+
+        Map<Boolean, List<String>> result = strings
+                .stream()
+                .collect(Collectors.partitioningBy(string -> string.length() > 4));
+
+        assertThrows(UnsupportedOperationException.class, () -> result.put(true, List.of("strawberry"))); // Unmodifiable map
+
+        assertThat(result.get(true)).isEqualTo(List.of("apple", "apple", "quince"));
+        assertThat(result.get(false)).isEqualTo(List.of("pear", "plum", "plum"));
+    }
 }
