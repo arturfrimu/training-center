@@ -70,4 +70,17 @@ class HowStreamMethodCollectWorksTest {
 
         assertThat(result).isEqualTo(Set.of("one", "two", "three", "four"));
     }
+
+    @Test
+    void testToUnmodifiableSet() {
+        List<String> strings = List.of("one", "two", "three");
+
+        Set<String> result = strings
+                .stream()
+                .collect(Collectors.toUnmodifiableSet());
+
+        assertThrows(UnsupportedOperationException.class, () -> result.add("four")); // Unmodifiable Set
+
+        assertThat(result).isEqualTo(Set.of("one", "two", "three"));
+    }
 }
