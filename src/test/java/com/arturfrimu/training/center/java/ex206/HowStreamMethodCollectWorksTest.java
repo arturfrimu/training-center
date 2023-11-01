@@ -154,4 +154,26 @@ class HowStreamMethodCollectWorksTest {
                 )
         );
     }
+
+    @Test
+    void testCollectorsGroupingBy() {
+        List<String> strings = List.of("apple", "apple", "pear", "quince", "plum", "plum");
+
+        Map<Integer, List<String>> result = strings
+                .stream()
+                .collect(Collectors.groupingBy(String::length, Collectors.toList()));
+
+        result.put(10, List.of("strawberry"));
+
+        assertThat(result.getClass()).isEqualTo(HashMap.class);
+
+        assertThat(result).isEqualTo(
+                Map.of(
+                        5, List.of("apple", "apple"),
+                        4, List.of("pear", "plum", "plum"),
+                        6, List.of("quince"),
+                        10, List.of("strawberry")
+                )
+        );
+    }
 }
