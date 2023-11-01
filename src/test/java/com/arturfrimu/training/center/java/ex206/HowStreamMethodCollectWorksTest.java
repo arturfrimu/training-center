@@ -4,7 +4,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -52,5 +54,20 @@ class HowStreamMethodCollectWorksTest {
         assertThrows(UnsupportedOperationException.class, () -> result.add("four")); // Unmodifiable List
 
         assertThat(result).isEqualTo(List.of("one", "two", "three"));
+    }
+
+    @Test
+    void testToSet() {
+        List<String> strings = List.of("one", "two", "three");
+
+        Set<String> result = strings
+                .stream()
+                .collect(Collectors.toSet());
+
+        result.add("four"); // Modifiable Set
+
+        assertThat(result.getClass()).isEqualTo(HashSet.class);
+
+        assertThat(result).isEqualTo(Set.of("one", "two", "three", "four"));
     }
 }
