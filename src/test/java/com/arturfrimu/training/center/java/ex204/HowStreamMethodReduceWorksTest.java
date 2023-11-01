@@ -8,12 +8,15 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * @see <a href="https://www.geeksforgeeks.org/java-8-predicate-with-examples/">Java Predicate</a>
  * @see <a href="https://www.baeldung.com/java-stream-reduce">Stream reduce</a>
+ * @see <a href="https://medium.com/@mgm06bm/list-of-vs-arrays-aslist-7e2f7af64361#:~:text=of()%3A-,List.,cannot%20be%20modified%20after%20creation.">List.of()</a>
  */
 @Slf4j
 class HowStreamMethodReduceWorksTest {
 
+    /**
+     * List. of() is a factory method introduced in Java 9 that creates an immutable list containing the specified elements. Here are some key points to note: Immutability: The resulting list is immutable, meaning its size and elements cannot be modified after creation.
+     */
     @Test
     void testReduceWithIntegersV1() {
         List<Integer> numbers = List.of(1, 2, 3, 4, 5);
