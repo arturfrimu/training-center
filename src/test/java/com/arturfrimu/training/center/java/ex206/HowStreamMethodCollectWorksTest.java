@@ -287,4 +287,18 @@ class HowStreamMethodCollectWorksTest {
 
         // TODO: 02.11.2023 Fa assert cu toate metodele lui LongSummaryStatistics
     }
+
+    @Test
+    void testCollectorsSummarizingDouble() {
+        List<Double> numbers = List.of(1D, 2D, 3D);
+
+        DoubleSummaryStatistics result = numbers.stream().collect(Collectors.summarizingDouble(Double::doubleValue));
+
+        assertThat(result.getSum()).isEqualTo(6.0);
+        assertThat(result.getCount()).isEqualTo(3L);
+        assertThat(result.getMin()).isEqualTo(1.0);
+        assertThat(result.getMax()).isEqualTo(3.0);
+
+        // TODO: 02.11.2023 Fa assert cu toate metodele lui DoubleSummaryStatistics
+    }
 }
