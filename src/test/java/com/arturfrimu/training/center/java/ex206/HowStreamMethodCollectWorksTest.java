@@ -240,4 +240,13 @@ class HowStreamMethodCollectWorksTest {
 
         assertThat(result).isEqualTo("one,two,three");
     }
+
+    @Test
+    void testCollectorsCounting() {
+        List<String> strings = List.of("one", "two", "three");
+
+        long count = strings.stream().collect(Collectors.counting());
+
+        assertThat(count).isEqualTo(3);
+    }
 }
