@@ -310,4 +310,13 @@ class HowStreamMethodCollectWorksTest {
 
         assertThat(average).isEqualTo(2.0);
     }
+
+    @Test
+    void testCollectorsAveragingLong() {
+        List<Long> numbers = List.of(1L, 2L, 3L);
+
+        double average = numbers.stream().collect(Collectors.averagingLong(Long::longValue));
+
+        assertThat(average).isEqualTo(2.0);
+    }
 }
