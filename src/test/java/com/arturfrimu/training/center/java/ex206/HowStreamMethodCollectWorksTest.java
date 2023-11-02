@@ -347,4 +347,13 @@ class HowStreamMethodCollectWorksTest {
 
         assertThat(max).contains(3);
     }
+
+    @Test
+    void testCollectorsMinBy() {
+        List<Integer> numbers = List.of(1, 2, 3);
+
+        Optional<Integer> min = numbers.stream().collect(Collectors.minBy(Integer::compareTo));
+
+        assertThat(min).contains(1);
+    }
 }
