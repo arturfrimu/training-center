@@ -374,4 +374,13 @@ class HowStreamMethodCollectWorksTest {
 
         assertThat(sum).contains(6);
     }
+
+    @Test
+    void testCollectorsReducingV2() {
+        List<Integer> numbers = List.of(1, 2, 3);
+
+        Optional<Integer> sum = numbers.stream().reduce((a, b) -> a + b);
+
+        assertThat(sum).contains(6);
+    }
 }
