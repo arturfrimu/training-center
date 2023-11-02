@@ -328,4 +328,14 @@ class HowStreamMethodCollectWorksTest {
 
         assertThat(average).isEqualTo(2.0);
     }
+
+    @Test
+    void testCollectorsMaxBy() {
+        List<Integer> numbers = List.of(1, 2, 3);
+
+        Optional<Integer> max = numbers.stream().collect(Collectors.maxBy(Integer::compareTo));
+
+        assertThat(max).isPresent();
+        assertThat(max.get()).isEqualTo(3);
+    }
 }
