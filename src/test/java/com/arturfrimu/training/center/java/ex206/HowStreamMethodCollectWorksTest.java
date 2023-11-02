@@ -7,6 +7,7 @@ import java.util.*;
 import java.util.concurrent.ConcurrentMap;
 import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -422,6 +423,41 @@ class HowStreamMethodCollectWorksTest {
                         6, List.of("banana", "cherry")
                 )
         );
+    }
+
+    @Test
+    void testComparisonGroupingByWithRegularAndParallelStreams() {
+        List<String> uuids = Stream.generate(UUID::randomUUID)
+                .limit(10_000_000)
+                .map(UUID::toString)
+                .toList();
+
+        // Garbage collection
+        System.gc();
+
+        // Testing regular stream
+        long startTimeRegular = System.nanoTime();
+        Map<Integer, List<String>> resultMapRegular = uuids
+                .stream()
+                .collect(Collectors.groupingBy(String::length));
+        long durationRegular = System.nanoTime() - startTimeRegular;
+
+        // Testing parallel stream
+        long startTimeParallel = System.nanoTime();
+        Map<Integer, List<String>> resultMapParallel = uuids
+                .parallelStream()
+                .collect(Collectors.groupingBy(String::length));
+        long durationParallel = System.nanoTime() - startTimeParallel;
+
+        // Output results
+        System.out.println("Regular Stream Duration: " + durationRegular + " ns");
+        System.out.println("Parallel Stream Duration: " + durationParallel + " ns");
+
+        // Verify that the results are the same
+        assertThat(resultMapRegular).isEqualTo(resultMapParallel);
+
+        // Verify that the parallel stream is faster
+        assertThat(durationParallel).isLessThanOrEqualTo(durationRegular);
     }
 
     @Test
