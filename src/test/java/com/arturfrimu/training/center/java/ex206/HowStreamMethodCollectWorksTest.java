@@ -398,7 +398,23 @@ class HowStreamMethodCollectWorksTest {
     void testCollectorsGroupingByConcurrent() {
         List<String> strings = List.of("apple", "banana", "cherry");
 
-        ConcurrentMap<Integer, List<String>> resultMap = strings.stream().collect(Collectors.groupingByConcurrent(String::length));
+        ConcurrentMap<Integer, List<String>> resultMap = strings
+                .stream()
+                .collect(Collectors.groupingByConcurrent(String::length));
+
+        assertThat(resultMap).containsExactlyInAnyOrderEntriesOf(
+                Map.of(
+                        5, List.of("apple"),
+                        6, List.of("banana", "cherry")
+                )
+        );
+    }
+
+    @Test
+    void testCollectorsGroupingByConcurrentParallel() {
+        List<String> strings = List.of("apple", "banana", "cherry");
+
+        ConcurrentMap<Integer, List<String>> resultMap = strings.parallelStream().collect(Collectors.groupingByConcurrent(String::length));
 
         assertThat(resultMap).containsExactlyInAnyOrderEntriesOf(
                 Map.of(
