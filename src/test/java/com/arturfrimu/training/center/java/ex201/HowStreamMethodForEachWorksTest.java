@@ -3,8 +3,12 @@ package com.arturfrimu.training.center.java.ex201;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.stream.Stream;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * @see <a href="https://www.javatpoint.com/java-8-method-reference">Method Reference</a>
@@ -30,5 +34,16 @@ class HowStreamMethodForEachWorksTest {
         Consumer<String> printlnInConsole = System.out::println;
 
         stringStream.forEach(printlnInConsole);
+    }
+
+    @Test
+    void testForEach() {
+        List<Integer> numbers = List.of(1, 2, 3);
+
+        List<Integer> result = new ArrayList<>();
+
+        numbers.stream().forEach(result::add);
+
+        assertThat(result).containsExactlyElementsOf(numbers);
     }
 }
