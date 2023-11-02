@@ -466,4 +466,13 @@ class HowStreamMethodCollectWorksTest {
 
         assertThat(filteredStrings).containsExactly("three", "four");
     }
+
+    @Test
+    void testCollectorsFilteringV2() {
+        List<String> strings = List.of("one", "two", "three", "four");
+
+        List<String> filteredStrings = strings.stream().filter(s -> s.length() > 3).toList();
+
+        assertThat(filteredStrings).containsExactly("three", "four");
+    }
 }
