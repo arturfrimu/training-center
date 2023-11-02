@@ -338,4 +338,13 @@ class HowStreamMethodCollectWorksTest {
         assertThat(max).isPresent();
         assertThat(max.get()).isEqualTo(3);
     }
+
+    @Test
+    void testCollectorsMax() {
+        List<Integer> numbers = List.of(1, 2, 3);
+
+        Optional<Integer> max = numbers.stream().max(Integer::compareTo);
+
+        assertThat(max).contains(3);
+    }
 }
