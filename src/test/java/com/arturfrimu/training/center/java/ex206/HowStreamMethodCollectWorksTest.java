@@ -423,4 +423,20 @@ class HowStreamMethodCollectWorksTest {
                 )
         );
     }
+
+    @Test
+    void testCollectorsCollectingAndThen() {
+        List<String> strings = List.of("one", "two", "three");
+
+        List<String> uppercasedStrings = strings
+                .stream()
+                .collect(
+                        Collectors.collectingAndThen(
+                                Collectors.toList(),
+                                list -> list.stream().map(String::toUpperCase).collect(Collectors.toList())
+                        )
+                );
+
+        assertThat(uppercasedStrings).containsExactly("ONE", "TWO", "THREE");
+    }
 }
