@@ -301,4 +301,13 @@ class HowStreamMethodCollectWorksTest {
 
         // TODO: 02.11.2023 Fa assert cu toate metodele lui DoubleSummaryStatistics
     }
+
+    @Test
+    void testCollectorsAveragingInt() {
+        List<Integer> numbers = List.of(1, 2, 3);
+
+        double average = numbers.stream().collect(Collectors.averagingInt(Integer::intValue));
+
+        assertThat(average).isEqualTo(2.0);
+    }
 }
