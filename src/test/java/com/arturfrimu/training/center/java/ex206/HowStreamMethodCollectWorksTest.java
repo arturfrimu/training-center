@@ -271,6 +271,20 @@ class HowStreamMethodCollectWorksTest {
         assertThat(result.getMax()).isEqualTo(3);
         double average = result.getAverage();
 
-        // TODO: 02.11.2023 Fa asssert cu toate metodele lu iIntSummaryStatistics
+        // TODO: 02.11.2023 Fa assert cu toate metodele lui IntSummaryStatistics
+    }
+
+    @Test
+    void testCollectorsSummarizingLong() {
+        List<Long> numbers = List.of(1L, 2L, 3L);
+
+        LongSummaryStatistics result = numbers.stream().collect(Collectors.summarizingLong(Long::longValue));
+
+        assertThat(result.getSum()).isEqualTo(6L);
+        assertThat(result.getCount()).isEqualTo(3L);
+        assertThat(result.getMin()).isEqualTo(1L);
+        assertThat(result.getMax()).isEqualTo(3L);
+
+        // TODO: 02.11.2023 Fa assert cu toate metodele lui LongSummaryStatistics
     }
 }
