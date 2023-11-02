@@ -383,4 +383,13 @@ class HowStreamMethodCollectWorksTest {
 
         assertThat(sum).contains(6);
     }
+
+    @Test
+    void testCollectorsReducingV3() {
+        List<Integer> numbers = List.of(1, 2, 3);
+
+        Optional<Integer> sum = numbers.stream().reduce(Integer::sum);
+
+        assertThat(sum).contains(6);
+    }
 }
