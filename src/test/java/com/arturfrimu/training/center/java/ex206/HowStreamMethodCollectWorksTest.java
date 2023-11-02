@@ -258,4 +258,19 @@ class HowStreamMethodCollectWorksTest {
 
         assertThat(count).isEqualTo(3);
     }
+
+    @Test
+    void testCollectorsSummarizingInt() {
+        List<Integer> numbers = List.of(1, 2, 3);
+
+        IntSummaryStatistics result = numbers.stream().collect(Collectors.summarizingInt(Integer::intValue));
+
+        assertThat(result.getSum()).isEqualTo(6);
+        assertThat(result.getCount()).isEqualTo(3);
+        assertThat(result.getMin()).isEqualTo(1);
+        assertThat(result.getMax()).isEqualTo(3);
+        double average = result.getAverage();
+
+        // TODO: 02.11.2023 Fa asssert cu toate metodele lu iIntSummaryStatistics
+    }
 }
