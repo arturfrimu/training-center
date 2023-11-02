@@ -439,4 +439,13 @@ class HowStreamMethodCollectWorksTest {
 
         assertThat(uppercasedStrings).containsExactly("ONE", "TWO", "THREE");
     }
+
+    @Test
+    void testCollectorsMapping() {
+        List<String> strings = List.of("one", "two", "three");
+
+        List<Integer> stringLengths = strings.stream().collect(Collectors.mapping(String::length, Collectors.toList()));
+
+        assertThat(stringLengths).containsExactly(3, 3, 5);
+    }
 }
