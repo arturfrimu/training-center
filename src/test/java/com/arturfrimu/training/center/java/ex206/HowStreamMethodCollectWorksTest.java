@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentMap;
 import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
 
@@ -391,5 +392,19 @@ class HowStreamMethodCollectWorksTest {
         Optional<Integer> sum = numbers.stream().reduce(Integer::sum);
 
         assertThat(sum).contains(6);
+    }
+
+    @Test
+    void testCollectorsGroupingByConcurrent() {
+        List<String> strings = List.of("apple", "banana", "cherry");
+
+        ConcurrentMap<Integer, List<String>> resultMap = strings.stream().collect(Collectors.groupingByConcurrent(String::length));
+
+        assertThat(resultMap).containsExactlyInAnyOrderEntriesOf(
+                Map.of(
+                        5, List.of("apple"),
+                        6, List.of("banana", "cherry")
+                )
+        );
     }
 }
