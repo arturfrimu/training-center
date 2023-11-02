@@ -365,4 +365,13 @@ class HowStreamMethodCollectWorksTest {
 
         assertThat(min).contains(1);
     }
+
+    @Test
+    void testCollectorsReducing() {
+        List<Integer> numbers = List.of(1, 2, 3);
+
+        Optional<Integer> sum = numbers.stream().collect(Collectors.reducing((a, b) -> a + b));
+
+        assertThat(sum).contains(6);
+    }
 }
