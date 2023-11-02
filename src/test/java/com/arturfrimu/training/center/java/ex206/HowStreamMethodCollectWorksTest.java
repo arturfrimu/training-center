@@ -229,4 +229,15 @@ class HowStreamMethodCollectWorksTest {
         assertThat(result.get(true)).isEqualTo(List.of("apple", "apple", "quince"));
         assertThat(result.get(false)).isEqualTo(List.of("pear", "plum", "plum"));
     }
+
+    @Test
+    void testCollectorsJoining() {
+        List<String> strings = List.of("one", "two", "three");
+
+        String result = strings
+                .stream()
+                .collect(Collectors.joining(","));
+
+        assertThat(result).isEqualTo("one,two,three");
+    }
 }
