@@ -17,7 +17,7 @@ import java.util.*;
 @RestController
 @RequestMapping("/jasper/simple-report")
 @RequiredArgsConstructor
-public class SimpleJasperReport {
+public class SimpleJasperReportController {
 
     public static final List<Order> orders = new ArrayList<>();
     private final ReportService reportService;
@@ -27,9 +27,9 @@ public class SimpleJasperReport {
         return orders;
     }
 
-    @GetMapping("/generate/{reportFormat}")
-    public String generateReport(@PathVariable String reportFormat) {
-        return reportService.exportReport(reportFormat, orders);
+    @GetMapping("/generate/{reportFormat}/{jrxmlReportPath}")
+    public String generateReport(@PathVariable final String reportFormat, @PathVariable final String jrxmlReportPath) {
+        return reportService.exportReport(reportFormat, orders, jrxmlReportPath);
     }
 
     static {
@@ -51,9 +51,9 @@ public class SimpleJasperReport {
 
     @Service
     public static class ReportService {
-        public String exportReport(String reportFormat, final List<Order> data) {
+        public String exportReport(String reportFormat, final List<Order> data, final String jrxmlReportPath) {
             try {
-                File file = ResourceUtils.getFile("classpath:order.jrxml");
+                File file = ResourceUtils.getFile("classpath:" + jrxmlReportPath);
                 JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
                 JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(data);
                 Map<String, Object> parameters = new HashMap<>();

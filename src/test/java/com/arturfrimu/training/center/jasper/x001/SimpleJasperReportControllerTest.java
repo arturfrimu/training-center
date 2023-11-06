@@ -17,7 +17,7 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 import static org.springframework.http.RequestEntity.get;
 
 @SpringBootTest(webEnvironment = RANDOM_PORT)
-class SimpleJasperReportTest {
+class SimpleJasperReportControllerTest {
 
     @LocalServerPort
     private String port;
@@ -26,12 +26,12 @@ class SimpleJasperReportTest {
     private TestRestTemplate restTemplate;
 
     @Autowired
-    private SimpleJasperReport.ReportService reportService;
+    private SimpleJasperReportController.ReportService reportService;
 
     @Test
     void getOrders() {
         String URL = "http://localhost:" + port + "/jasper/simple-report";
-        ResponseEntity<List<SimpleJasperReport.Order>> orders = restTemplate.exchange(get(URL).build(), ORDERS);
+        ResponseEntity<List<SimpleJasperReportController.Order>> orders = restTemplate.exchange(get(URL).build(), ORDERS);
 
         assertThat(orders).isNotNull();
         assertThat(orders.getBody()).hasSize(5);
@@ -42,11 +42,11 @@ class SimpleJasperReportTest {
     @ValueSource(strings = {"html", "pdf"})
     @ParameterizedTest
     void generateReport(final String reportFormat) {
-        String response = new SimpleJasperReport(reportService).generateReport(reportFormat);
+        String response = new SimpleJasperReportController(reportService).generateReport(reportFormat, "jasper/order.jrxml");
 
         assertThat(response).isNotNull();
     }
 
-    static final ParameterizedTypeReference<List<SimpleJasperReport.Order>> ORDERS = new ParameterizedTypeReference<>() {
+    static final ParameterizedTypeReference<List<SimpleJasperReportController.Order>> ORDERS = new ParameterizedTypeReference<>() {
     };
 }
