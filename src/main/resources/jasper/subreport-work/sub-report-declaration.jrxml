@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="subreportName"
+              pageWidth="555"
+              pageHeight="802"
+              columnWidth="515"
+              leftMargin="20"
+              rightMargin="20"
+              topMargin="20"
+              bottomMargin="20"
+              whenNoDataType="AllSectionsNoDetail">
+
+    <field name="name" class="java.lang.String"/>
+    <field name="price" class="java.lang.Double"/>
+
+    <detail>
+        <band height="510" splitType="Stretch">
+
+            <rectangle>
+                <reportElement x="0" y="310" width="100" height="20" uuid="a202c724-6ece-4511-aecc-06c6e5fba263"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="0" y="310" width="100" height="20" uuid="a368ad95-f3fb-408f-8166-cf6f39230eb1"/>
+                <textElement>
+                    <font size="5"/>
+                    <paragraph leftIndent="1" rightIndent="1" spacingBefore="1" spacingAfter="1"/>
+                </textElement>
+                <text><![CDATA[Dec. G. I. Nr. [11 11]]]></text>
+            </staticText>
+            <rectangle>
+                <reportElement x="100" y="310" width="200" height="20" uuid="0288b88e-76c7-443c-9db5-4bfbff1124bf"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="100" y="310" width="200" height="20" uuid="30b34501-1da3-487d-83f8-19d69050c4f9"/>
+                <textElement>
+                    <font size="5"/>
+                    <paragraph leftIndent="1" rightIndent="1" spacingBefore="1" spacingAfter="1"/>
+                </textElement>
+                <text><![CDATA[UCR [12 08]]]></text>
+            </staticText>
+
+            <rectangle>
+                <reportElement x="300" y="310" width="275" height="20" uuid="19b98ecb-c834-4937-af75-3cc1a1a96038"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="300" y="310" width="275" height="20" uuid="be78223d-433e-48fc-8665-e2abc44a9322"/>
+                <textElement>
+                    <font size="5"/>
+                    <paragraph leftIndent="1" rightIndent="1" spacingBefore="2" spacingAfter="1"/>
+                </textElement>
+                <text><![CDATA[Description of goods [18 05] ]]></text>
+            </staticText>
+            <rectangle>
+                <reportElement x="0" y="330" width="300" height="20" uuid="0eec4d22-7585-4ded-af11-1afe222086a9"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="0" y="330" width="300" height="20" uuid="084efb46-74ac-4db2-8e49-c332060b50c5"/>
+                <textElement>
+                    <font size="5"/>
+                    <paragraph leftIndent="1" rightIndent="1" spacingBefore="1" spacingAfter="1"/>
+                </textElement>
+                <text><![CDATA[Consignor [13 02]]]></text>
+            </staticText>
+
+
+            <rectangle>
+                <reportElement x="300" y="330" width="140" height="20" uuid="49f606f1-fa94-424a-9638-01936cbfb834"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="300" y="330" width="140" height="20" uuid="76738803-3659-4a4d-822a-8f10e1457b00"/>
+                <textElement>
+                    <font size="5"/>
+                    <paragraph leftIndent="1" rightIndent="1" spacingBefore="2" spacingAfter="1"/>
+                </textElement>
+                <text><![CDATA[Type and number of packages, shipping marks [18 06]]]></text>
+            </staticText>
+            <rectangle>
+                <reportElement x="440" y="330" width="65" height="20" uuid="7be6ec58-c5ec-4698-ac0f-314f25f650c1"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="440" y="330" width="65" height="20" uuid="d786fef6-bebd-48d8-b1da-842f401b7bfb"/>
+                <textElement>
+                    <font size="5"/>
+                    <paragraph leftIndent="1" rightIndent="1" spacingBefore="2" spacingAfter="1"/>
+                </textElement>
+                <text><![CDATA[CUS Code [18 08]]]></text>
+            </staticText>
+
+
+            <rectangle>
+                <reportElement x="505" y="330" width="70" height="20" uuid="db7a8b66-9a2d-4666-bdb7-36356937e319"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="505" y="330" width="70" height="20" uuid="4cbc313e-3c24-4cff-9854-5cfdc5470d56"/>
+                <textElement>
+                    <font size="5"/>
+                    <paragraph leftIndent="1" rightIndent="1" spacingBefore="2" spacingAfter="1"/>
+                </textElement>
+                <text><![CDATA[UN Number [18 07]]]></text>
+            </staticText>
+            <rectangle>
+                <reportElement x="0" y="350" width="300" height="20" uuid="9f85e96d-15bc-4fba-bba2-5960defc7982"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="0" y="350" width="300" height="20" uuid="04b6672c-dbdb-4260-a82e-d85ff560acbe"/>
+                <textElement>
+                    <font size="5"/>
+                    <paragraph leftIndent="1" rightIndent="1" spacingBefore="1" spacingAfter="1"/>
+                </textElement>
+                <text><![CDATA[Consignor [13 03]]]></text>
+            </staticText>
+            <rectangle>
+                <reportElement x="300" y="350" width="140" height="20" uuid="d0fd43fc-0479-46ad-9be0-c2c83f990e11"/>
+            </rectangle>
+
+            <staticText>
+                <reportElement x="300" y="350" width="140" height="20" uuid="3b57801c-ab60-4c8b-a795-9ca45ccdcf8b"/>
+                <textElement>
+                    <font size="5"/>
+                    <paragraph leftIndent="1" rightIndent="1" spacingBefore="2" spacingAfter="1"/>
+                </textElement>
+                <text><![CDATA[Combined Nomenclature Code (8 digits) [18 09]]]></text>
+            </staticText>
+            <rectangle>
+                <reportElement x="440" y="350" width="65" height="20" uuid="f0b56adb-974c-452a-a754-f0bd5e908ef9"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="440" y="350" width="65" height="20" uuid="731026fb-0a8c-4ce4-87e9-e700abda1103"/>
+                <textElement>
+                    <font size="5"/>
+                    <paragraph leftIndent="1" rightIndent="1" spacingBefore="2" spacingAfter="1"/>
+                </textElement>
+                <text><![CDATA[Taric Add. Code [18 09]]]></text>
+            </staticText>
+            <rectangle>
+                <reportElement x="505" y="350" width="70" height="20" uuid="35d67bd7-10d2-4b14-9def-85d67f6ffbe8"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="505" y="350" width="70" height="20" uuid="edbb84e0-caaf-4250-b597-6062f4dfb98c"/>
+                <textElement>
+                    <font size="5"/>
+                    <paragraph leftIndent="1" rightIndent="1" spacingBefore="2" spacingAfter="1"/>
+                </textElement>
+                <text><![CDATA[Nat. Add. Code [18 09]]]></text>
+            </staticText>
+
+
+            <rectangle>
+                <reportElement x="0" y="370" width="300" height="20" uuid="790632af-edab-457f-a1d4-2925d2b11785"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="0" y="370" width="300" height="20" uuid="f819306d-98f6-4ad8-94ab-08a4a58770cc"/>
+                <textElement>
+                    <font size="5"/>
+                    <paragraph leftIndent="1" rightIndent="1" spacingBefore="1" spacingAfter="1"/>
+                </textElement>
+                <text><![CDATA[Additional supply chain actor [13 14]]]></text>
+            </staticText>
+            <rectangle>
+                <reportElement x="300" y="370" width="140" height="20" uuid="5e3cc125-e023-42a7-a7bc-25e14b596cc8"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="300" y="370" width="140" height="20" uuid="6260c78e-c0cf-495f-bd1a-75c3fdb46dd4"/>
+                <textElement>
+                    <font size="5"/>
+                    <paragraph leftIndent="1" rightIndent="1" spacingBefore="2" spacingAfter="1"/>
+                </textElement>
+                <text><![CDATA[Statistical Value [99 06]]]></text>
+            </staticText>
+            <rectangle>
+                <reportElement x="440" y="370" width="65" height="20" uuid="14dccfbd-1902-417a-9908-7c404d3801fc"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="440" y="370" width="65" height="20" uuid="28c68449-a1e9-4cb7-84ee-76688b1ee27e"/>
+                <textElement>
+                    <font size="5"/>
+                    <paragraph leftIndent="1" rightIndent="1" spacingBefore="2" spacingAfter="1"/>
+                </textElement>
+                <text><![CDATA[Supplem. unit [18 02]]]></text>
+            </staticText>
+            <rectangle>
+                <reportElement x="440" y="180" width="80" height="10" uuid="5baebfbb-3c59-4a89-9805-70a1a206e4a5"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="440" y="180" width="80" height="10" uuid="91827631-6c8b-43e6-95a9-3803ff0dde35"/>
+                <textElement>
+                    <font size="5"/>
+                    <paragraph leftIndent="1" rightIndent="1" spacingBefore="1" spacingAfter="1"/>
+                </textElement>
+                <text><![CDATA[Nature of Transaction [99 05 ]]]></text>
+            </staticText>
+
+
+            <rectangle>
+                <reportElement x="0" y="390" width="100" height="20" uuid="bbf9ccb6-8a62-42f0-be18-4520158ce57d"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="0" y="390" width="100" height="20" uuid="d1107342-f1f1-482e-b1a3-0bba06b545cf"/>
+                <textElement>
+                    <font size="5"/>
+                    <paragraph leftIndent="1" rightIndent="1" spacingBefore="1" spacingAfter="1"/>
+                </textElement>
+                <text><![CDATA[Country Export [16 07]]]></text>
+            </staticText>
+            <rectangle>
+                <reportElement x="100" y="390" width="200" height="20" uuid="9d53db18-7d11-4f94-8453-6328b3c6d1ad"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="100" y="390" width="200" height="20" uuid="c5f311b1-0e11-4a7b-b4e4-471367ddf9cc"/>
+                <textElement>
+                    <font size="5"/>
+                    <paragraph leftIndent="1" rightIndent="1" spacingBefore="1" spacingAfter="1"/>
+                </textElement>
+                <text><![CDATA[Country of. destin. [16 03]]]></text>
+            </staticText>
+            <rectangle>
+                <reportElement x="440" y="200" width="135" height="10" uuid="b839101b-932f-4720-9479-47e2c8c19249"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="440" y="200" width="135" height="10" uuid="00094bd9-4809-447d-aa6b-1feccf78db3a"/>
+                <textElement>
+                    <font size="5"/>
+                    <paragraph leftIndent="1" rightIndent="1" spacingBefore="1" spacingAfter="1"/>
+                </textElement>
+                <text><![CDATA[Gross mass [18 04]]]></text>
+            </staticText>
+            <rectangle>
+                <reportElement x="440" y="390" width="135" height="20" uuid="9fad6e44-7541-4770-bc45-cf63597d2fec"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="440" y="390" width="135" height="20" uuid="a462832a-3eff-4ca2-a49b-6e60617a8e90"/>
+                <textElement>
+                    <font size="5"/>
+                    <paragraph leftIndent="1" rightIndent="1" spacingBefore="2" spacingAfter="1"/>
+                </textElement>
+                <text><![CDATA[Net mass (kg) [18 01]]]></text>
+            </staticText>
+
+
+            <rectangle>
+                <reportElement x="0" y="410" width="100" height="20" uuid="260b50a2-4368-489d-ad00-23c113bba24e"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="0" y="410" width="100" height="20" uuid="0b21101d-9f59-4ffa-8dce-16bfa701a3b2"/>
+                <textElement>
+                    <font size="5"/>
+                    <paragraph leftIndent="1" rightIndent="1" spacingBefore="1" spacingAfter="1"/>
+                </textElement>
+                <text><![CDATA[Country of Origin [16 08]]]></text>
+            </staticText>
+            <rectangle>
+                <reportElement x="100" y="410" width="200" height="20" uuid="6b24bc64-7781-4310-8e8c-1ec22afb9d38"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="100" y="410" width="200" height="20" uuid="fa53baa0-7058-4f07-b019-c6b915a7e25e"/>
+                <textElement>
+                    <font size="5"/>
+                    <paragraph leftIndent="1" rightIndent="1" spacingBefore="1" spacingAfter="1"/>
+                </textElement>
+                <text><![CDATA[Region of Dispatch [16 10]]]></text>
+            </staticText>
+            <rectangle>
+                <reportElement x="300" y="410" width="140" height="20" uuid="ff5ec7ca-f3de-4f01-b977-619c8f8491d5"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="300" y="410" width="140" height="20" uuid="256c51fb-788d-429a-9b55-9071e9829658"/>
+                <textElement>
+                    <font size="5"/>
+                    <paragraph leftIndent="1" rightIndent="1" spacingBefore="2" spacingAfter="1"/>
+                </textElement>
+                <text><![CDATA[Requested Procedure [11 09 001]]]></text>
+            </staticText>
+            <rectangle>
+                <reportElement x="440" y="410" width="65" height="20" uuid="622da281-c611-4ce5-875c-c86d98bbe696"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="440" y="410" width="65" height="20" uuid="eadefaa2-8154-4e56-a7c1-4b39654b5481"/>
+                <textElement>
+                    <font size="5"/>
+                    <paragraph leftIndent="1" rightIndent="1" spacingBefore="2" spacingAfter="1"/>
+                </textElement>
+                <text><![CDATA[Prev. Proc. [11 09 002 ]]]></text>
+            </staticText>
+            <rectangle>
+                <reportElement x="505" y="410" width="70" height="20" uuid="19eb3581-ec10-40c3-be96-6dc5b289388a"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="505" y="410" width="70" height="20" uuid="2162547a-6c04-45a8-af8c-aad79d1acb6a"/>
+                <textElement>
+                    <font size="5"/>
+                    <paragraph leftIndent="1" rightIndent="1" spacingBefore="2" spacingAfter="1"/>
+                </textElement>
+                <text><![CDATA[Additional Procedure [11 10]]]></text>
+            </staticText>
+
+            <rectangle>
+                <reportElement x="0" y="430" width="300" height="20" uuid="10870861-477a-43d5-aae7-11ae7a695aa5"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="0" y="430" width="300" height="20" uuid="0dcae77d-962b-4668-92ad-09f7a9e26f01"/>
+                <textElement>
+                    <font size="5"/>
+                    <paragraph leftIndent="1" rightIndent="1" spacingBefore="1" spacingAfter="1"/>
+                </textElement>
+                <text><![CDATA[Method of Pay. (T.C.) [14 02]]]></text>
+            </staticText>
+            <rectangle>
+                <reportElement x="300" y="430" width="140" height="20" uuid="1a84485c-913b-416c-b96d-1820c68af702"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="300" y="430" width="140" height="20" uuid="2f682fb2-cd88-413d-8353-7893b2f20a36"/>
+                <textElement>
+                    <font size="5"/>
+                    <paragraph leftIndent="1" rightIndent="1" spacingBefore="2" spacingAfter="1"/>
+                </textElement>
+                <text><![CDATA[Duties and Taxes [14 03]]]></text>
+            </staticText>
+            <rectangle>
+                <reportElement x="440" y="430" width="135" height="20" uuid="09b0d6e5-4a05-435b-a9b9-00d876de7ac0"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="440" y="430" width="135" height="20" uuid="ec430e1e-a7e7-4f98-99b6-8efd716fd151"/>
+                <textElement>
+                    <font size="5"/>
+                    <paragraph leftIndent="1" rightIndent="1" spacingBefore="2" spacingAfter="1"/>
+                </textElement>
+                <text><![CDATA[Total Duties and Taxes Amount [14 16]]]></text>
+            </staticText>
+
+            <rectangle>
+                <reportElement x="0" y="450" width="300" height="20" uuid="08a5b6cd-0f10-4171-b51a-898156afdcd9"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="0" y="450" width="300" height="20" uuid="26541bd8-07f8-45db-865d-e37b530e8420"/>
+                <textElement>
+                    <font size="5"/>
+                    <paragraph leftIndent="1" rightIndent="1" spacingBefore="1" spacingAfter="1"/>
+                </textElement>
+                <text><![CDATA[Transport document [12 05]]]></text>
+            </staticText>
+            <rectangle>
+                <reportElement x="300" y="450" width="275" height="20" uuid="c1c6a4af-f155-4f1c-84ae-3c57b8d4319b"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="300" y="450" width="275" height="20" uuid="c1037f91-b723-40c5-913c-a9ad5227fd4d"/>
+                <textElement>
+                    <font size="5"/>
+                    <paragraph leftIndent="1" rightIndent="1" spacingBefore="2" spacingAfter="1"/>
+                </textElement>
+                <text><![CDATA[Authorisation [12 12]]]></text>
+            </staticText>
+
+
+            <rectangle>
+                <reportElement x="0" y="470" width="300" height="20" uuid="9fd8e3f8-6cea-45d8-a0e8-d22b330e289a"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="0" y="470" width="300" height="20" uuid="b68357cc-0b5e-4042-aa72-ca7f1e27469c"/>
+                <textElement>
+                    <font size="5"/>
+                    <paragraph leftIndent="1" rightIndent="1" spacingBefore="1" spacingAfter="1"/>
+                </textElement>
+                <text><![CDATA[Previous document [12 01]]]></text>
+            </staticText>
+            <rectangle>
+                <reportElement x="300" y="470" width="275" height="20" uuid="151349b2-68a1-4391-ad72-73159fc1acad"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="300" y="470" width="275" height="20" uuid="f8d45bc7-8015-4664-9555-181a5a35183b"/>
+                <textElement>
+                    <font size="5"/>
+                    <paragraph leftIndent="1" rightIndent="1" spacingBefore="2" spacingAfter="1"/>
+                </textElement>
+                <text><![CDATA[Supporting document [12 03]]]></text>
+            </staticText>
+
+            <rectangle>
+                <reportElement x="0" y="490" width="300" height="20" uuid="43221290-0dd1-4af3-9b09-d98a0ba9a4d4"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="0" y="490" width="300" height="20" uuid="dffd3bc1-8750-4624-b620-7c342e892b3e"/>
+                <textElement>
+                    <font size="5"/>
+                    <paragraph leftIndent="1" rightIndent="1" spacingBefore="1" spacingAfter="1"/>
+                </textElement>
+                <text><![CDATA[Additional reference [12 04]]]></text>
+            </staticText>
+            <rectangle>
+                <reportElement x="300" y="490" width="275" height="20" uuid="80e75a16-b934-4eeb-8bcd-b6ddd1384bbf"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="300" y="490" width="275" height="20" uuid="6c02d6be-1f7a-423d-8d6d-3f3fae16e306"/>
+                <textElement>
+                    <font size="5"/>
+                    <paragraph leftIndent="1" rightIndent="1" spacingBefore="2" spacingAfter="1"/>
+                </textElement>
+                <text><![CDATA[Additional information [12 02]]]></text>
+            </staticText>
+
+
+<!--            <textField>-->
+<!--                <reportElement x="0" y="0" width="200" height="20" uuid="65f9ba72-a9e8-4fff-9514-892f81dd054c"/>-->
+<!--                <textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>-->
+<!--            </textField>-->
+<!--            <textField>-->
+<!--                <reportElement x="200" y="0" width="100" height="20" uuid="65f9ba72-a9e8-4fff-9514-892f81dd054d"/>-->
+<!--                <textFieldExpression><![CDATA[$F{price} != null ? $F{price}.toString() : ""]]></textFieldExpression>-->
+<!--            </textField>-->
+        </band>
+    </detail>
+
+    <pageFooter>
+        <band height="20">
+            <textField>
+                <reportElement x="0" y="0" width="515" height="20"/>
+                <textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageFooter>
+</jasperReport>
