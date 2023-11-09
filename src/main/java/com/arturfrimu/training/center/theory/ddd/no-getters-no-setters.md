@@ -1,6 +1,6 @@
 **The Anemic Domain Model (ADM) is** a design pattern where the domain model is used solely to hold data, and contains little or no business logic. 
 This approach treats the model as a data structure, with public setters and getters and sometimes a no-argument constructor, 
-which is typically required by Object-Relational Mapping (ORM) tools like Hibernate for persistence purposes.
+which is typically required by **Object-Relational Mapping (ORM)** tools like Hibernate for persistence purposes.
 
 ```java
 @Entity
@@ -33,9 +33,9 @@ public class Tamagotchi {
 }
 ```
 
-**The use case provided with Pocket and Tamagotchi entities is** a classic example of ADM. 
-**The entities are** simple data containers with @Entity annotations, signifying that they are JPA entities. 
-Each entity has an `id`, properties like `name`, and relationship mappings defined by <span style="color: #795da3">@OneToMany</span> or <span style="color: #795da3">@ManyToOne</span> annotations.
+**The use case provided with Pocket and Tamagotchi entities is** a classic example of `ADM`. 
+**The entities are** simple data containers with `@Entity` annotations, signifying that they are JPA entities. 
+Each entity has an `id`, properties like `name`, and relationship mappings defined by `@OneToMany` or `@ManyToOne` annotations.
 
 **The main critique of ADM is** that it can lead to a design that scatters business logic across the codebase. 
 **Instead of encapsulating** behavior within the entities or domain objects, the logic is often implemented in services or other layers, 
@@ -48,13 +48,15 @@ which can lead to procedural-style code rather than truly object-oriented code.
 **This means** incorporating business rules and behaviors into the entities themselves, turning them into more than just data holders. 
 **Entities in RDM have** methods defining their behavior, and they ensure that any changes to the entity go through these methods, which can validate and enforce consistency.
 
-## Transitioning from ADM to RDM can bring several benefits:
+## Transitioning from `ADM` to` RDM` can bring several benefits:
 
 ### Encapsulation: 
-By encapsulating logic within the entities, you can ensure that all changes to the entity's state go through domain-specific methods, which can enforce invariants and business rules.
+By encapsulating logic within the entities, you can ensure that all changes to the entity's state go through domain-specific methods, 
+which can enforce invariants and business rules.
 
 ### Maintainability: 
-It becomes easier to maintain and evolve the codebase as business logic is located with the data it pertains to, reducing the complexity of tracing through the code to understand what it does.
+It becomes easier to maintain and evolve the codebase as business logic is located with the data it pertains to, 
+reducing the complexity of tracing through the code to understand what it does.
 
 ### Testability: 
 Testing can be more focused and granular as each entity contains its own behavior that can be tested in isolation.
@@ -65,7 +67,7 @@ RDM aligns well with Domain-Driven Design (DDD) principles, which advocate for r
 ### Reduced Boilerplate: 
 By not including unnecessary getters, setters, or constructors, the codebase is leaner and more purposeful.
 
-**However, transitioning to RDM has** its own challenges. ORM frameworks often require no-arg constructors and setters for reflection and proxy generation. 
+**However, transitioning to RDM has** its own challenges. `ORM` frameworks often require no-arg constructors and setters _for reflection and proxy generation._ 
 **Techniques like** using package-private visibility, proxies, or bytecode enhancement can address this.
 
 **Regarding the use of UUIDs, while** there are performance implications due to their size and non-sequential nature, 
