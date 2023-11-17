@@ -1,4 +1,4 @@
-package com.arturfrimu.training.center.junior.java.section1;
+package com.arturfrimu.training.center.junior.java.section2;
 
 public class Lesson4 {
     public static void main(String[] args) {

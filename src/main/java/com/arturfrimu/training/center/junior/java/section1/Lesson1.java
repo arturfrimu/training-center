@@ -1,14 +1,14 @@
 package com.arturfrimu.training.center.junior.java.section1;
 
 /**
- * Clasa Lesson1 este un exemplu simplu de clasă Java.
+ * Clasa {@link Lesson1} este un exemplu simplu de clasă Java.
  */
 class Lesson1 {
 
     /**
      * public static void main(String[] args) - Metoda apelată pentru a rula programul.
      * <ul>
-     *     <li><b>main</b>: Denumirea metodei.</li>
+     *     <li><b> {@link Lesson1#main}</b>: Denumirea metodei.</li>
      *     <li><b>public</b>: Modificator de acces; este încă devreme să știi ce înseamnă asta.</li>
      *     <li><b>static</b>: Un cuvânt cheie în Java; este încă devreme să știi ce înseamnă asta.</li>
      *     <li><b>void</b>: Tipul de return al metodei; este încă devreme să știi ce înseamnă asta.</li>
