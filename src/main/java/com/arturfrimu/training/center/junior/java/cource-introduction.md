@@ -22,12 +22,6 @@
 <!-- TOC -->
 
 # Java
-
-```java
-public static void main(String[] args) {
-  System.out.println("Maria, Artur te iubeste !");
-}
-```
 ## Fundament
 ### Sintaxa de baza
 ### Tipuri de date si variabile
