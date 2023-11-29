@@ -8,7 +8,9 @@ public class WebPageCrawler {
         int expectedIOLatency = 500; // Estimated I/O latency in milliseconds
         int numberOfThreads = 4; // Adjust based on your expected latency and system capabilities
 
-        try (ExecutorService threadPool = Executors.newFixedThreadPool(numberOfThreads)) {
+        ExecutorService threadPool = null;
+        try {
+            threadPool = Executors.newFixedThreadPool(numberOfThreads);
             // List of URLs to crawl.
             String[] urlsToCrawl = {
                     "https://example.com",
@@ -21,6 +23,7 @@ public class WebPageCrawler {
                 threadPool.execute(() -> crawlWebPage(url, expectedIOLatency));
             }
 
+        } finally {
             threadPool.shutdown();
         }
     }

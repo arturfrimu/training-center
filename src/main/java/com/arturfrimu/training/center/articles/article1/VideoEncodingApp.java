@@ -7,13 +7,14 @@ public class VideoEncodingApp {
     public static void main(String[] args) {
         int availableCores = Runtime.getRuntime().availableProcessors();
         int numberOfThreads = Math.max(availableCores - 1, 1); // Adjust as needed
-
-        try (ExecutorService threadPool = Executors.newFixedThreadPool(numberOfThreads)) {
+        ExecutorService threadPool = null;
+        try {
+            threadPool = Executors.newFixedThreadPool(numberOfThreads);
             // Submit video encoding tasks to the thread pool.
             for (int i = 0; i < 10; i++) {
                 threadPool.execute(VideoEncodingApp::encodeVideo);
             }
-
+        } finally {
             threadPool.shutdown();
         }
     }

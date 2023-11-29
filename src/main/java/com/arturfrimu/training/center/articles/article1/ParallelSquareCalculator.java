@@ -8,14 +8,17 @@ public class ParallelSquareCalculator {
     public static void main(String[] args) {
         int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         int numThreads = Runtime.getRuntime().availableProcessors(); // Get the number of CPU cores
-        try (ExecutorService executorService = Executors.newFixedThreadPool(numThreads)) {
+
+        ExecutorService executorService = null;
+        try {
+            executorService = Executors.newFixedThreadPool(numThreads);
             for (int number : numbers) {
                 executorService.submit(() -> {
                     int square = calculateSquare(number);
                     System.out.println("Square of " + number + " is " + square);
                 });
             }
-
+        } finally {
             executorService.shutdown();
             try {
                 executorService.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
