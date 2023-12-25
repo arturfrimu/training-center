@@ -1,5 +1,43 @@
-Ce este un obiect in java?
+Întrebare: Ce face declarația if în Java?
 
-Ce este this in java?
+Întrebare: Ce face declarația else if în Java?
 
-Ce este super in java?
+Întrebare: Ce face declarația else în Java?
+
+Întrebare: Cum funcționează bucla for în Java?
+
+Întrebare: Cum funcționează bucla while în Java?
+
+Întrebare: Cum funcționează bucla do-while în Java?
+
+Întrebare: În ce situații este preferabil să folosești bucla while?
+
+Întrebare: În ce situații este preferabil să folosești bucla for?
+
+Întrebare: Explică cum funcționează switch case în Java.
+
+Întrebare: Ce înseamnă casting în Java?
+
+Întrebare: Diferențiază între primitive și wrappers în Java?
+
+Întrebare: Cum se realizează un casting de la tipurile primitive la wrappers?
+
+Întrebare: Cum se realizează un casting de la wrappers la primitive?
+
+Întrebare: Ce face break într-un switch case?
+
+Întrebare: Cum poți ieși dintr-o buclă while?
+
+Întrebare: Ce este un infinite loop și cum poate fi creat în Java?
+
+Întrebare: Cum folosești continue într-o buclă?
+
+Întrebare: Ce este un nested loop și cum este utilizat în Java?
+
+Întrebare: Ce este un default case în switch?
+
+Întrebare: Care este diferența dintre while și do-while?
+
+Întrebare: Explică conceptul de unboxing în Java.
+
+Întrebare: Cum se folosește else fără un if în Java?
