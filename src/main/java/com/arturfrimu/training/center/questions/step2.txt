@@ -1,5 +1,15 @@
-Ce este un obiect in java?
+Proiect: Calculator de Venituri pentru Depozit Bancar
 
-Ce este this in java?
+Descriere:
+Creați o aplicație Java care calculează veniturile generate de un depozit bancar pe baza sumei depuse și a duratei depozitului.
+Procentul de dobândă variază în funcție de termenul depozitului.
 
-Ce este super in java?
+Funcționalități:
+
+Introducerea Sumelor: Permiteți utilizatorului să introducă suma pe care dorește să o depună.
+Selectarea Duratei Depozitului: Utilizatorul introduce durata depozitului în luni.
+
+Calculul Veniturilor: În funcție de numărul de luni, aplicați diferite rate de dobândă pentru a calcula veniturile.
+De exemplu: 1-6 luni = 2% dobândă, 7-12 luni = 3%, 13-24 luni = 4%, etc.
+
+Afișarea Rezultatelor: Afișați suma totală pe care utilizatorul o va primi la sfârșitul termenului depozitului.
