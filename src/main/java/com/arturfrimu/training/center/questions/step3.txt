@@ -1,0 +1,31 @@
+Problemă: Calculator de Economii Progresive
+
+Descriere:
+
+Să presupunem că un utilizator dorește să economisească o anumită sumă de bani în fiecare lună.
+Suma economisită va crește progresiv de la o lună la alta cu un procent fix.
+Scopul este de a calcula suma totală economisită după un număr specific de luni.
+
+Cerințe:
+
+Utilizatorul introduce suma inițială pe care dorește să o economisească în prima lună.
+Utilizatorul introduce procentul de creștere a sumei economisite pentru fiecare lună următoare.
+Utilizatorul introduce numărul total de luni pentru economii.
+Programul calculează suma totală economisită la sfârșitul perioadei.
+
+Pentru valorile date ca exemplu:
+
+Suma inițială de economisit: 100 unități monetare
+Procentul de creștere lunară: 5%
+Numărul de luni: 6
+Suma totală economisită după 6 luni, conform calculului efectuat, este de aproximativ 680.19 unități monetare.
+
+Acesta este un exemplu de răspuns corect pe baza cerințelor specificate și a datelor de intrare.
+
+Introduceți suma inițială de economisit:
+100
+Introduceți procentul de creștere lunară:
+5
+Introduceți numărul de luni:
+6
+Suma totală economisită după 6 luni este: 680.19128125
