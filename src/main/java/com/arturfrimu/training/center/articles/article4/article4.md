@@ -20,13 +20,13 @@ Started networking with people across the globe and got on calls with founders
 Started a newsletter and finally created passive income alongside my day job
 All because I followed a bunch of habits, models, and mentalities. The simplest of them all was
 
-To get head of the 99% of the people, you’ll have to do what the 99% is unwilling to do
+### To get head of the 99% of the people, you’ll have to do what the 99% is unwilling to do
 
 Every time you wake you have to ask yourself, “Is this bringing me comfort or is this making me lazy”. Most of the time, the things making me feel the most comfortable were the ones keeping me away from my true potential.
 
 For example, I had a job, that was bringing me money, if I wanted, I would have just stayed there, passed my time, and done my work, and life would have gone smoothly. Only when I decided to challenge the odds and quit, I was able to get a better opportunity. Even then, I leaped to start my own business (all bootstrapped). Which brings us to our 1st habit:
 
-1. Seek Discomfort
+# 1. Seek Discomfort
    Sounds cliche, but trust me this one is the most important lesson. Professionally or personally, seeking discomfort is the only way a person can know their potential. Are you too comfortable with your work right now? Challenge it — take more tasks and push your boundaries.
 
 Want to start your business but don’t have time? Make it. Do work while traveling, cooking, an hour before bed — replace your TV time with work time. Let go of the materialistic happiness.
@@ -38,4 +38,11 @@ Absolutely not. Like I said, to be ahead of people, you’ll have to do what the
 Your choices today will decide the future you have tomorrow. I like many others, choose to make sacrifices today so that I can have a more comfortable tomorrow. The hustle is not for the weak-hearted — you have to make up your mindset for it.
 
 This cultivates resilience, adaptability, and a fearless attitude toward challenges.
+
+# 2. Focus on What Matters
+   It’s not merely about ‘focus’; it’s about honing in on ‘what matters.’ Don’t invest time in things that don’t make you happier, healthier or smarter. Watch a show, eat something healthy, read a book — create a lifestyle that leads to ultimate betterment.
+
+Whether you prefer podcasts over reading or yoga over exercise, don’t squander your energy on activities that don’t align with your authentic self.
+
+Life is too short to engage in things that fail to ignite your excitement. Navigate away from energy-draining influences like social media or celebrity gossip, and invest your time where it truly matters.
 
