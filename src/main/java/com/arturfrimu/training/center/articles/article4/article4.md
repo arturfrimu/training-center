@@ -51,3 +51,12 @@ Life is too short to engage in things that fail to ignite your excitement. Navig
 
 Acknowledge flaws, learn from mistakes, and eschew excuses. By taking responsibility, you gain the autonomy to make positive changes and pursue goals with intent.
 
+# 4. Let Go of the Need for Approval
+Success often necessitates breaking free from the chains of external validation. The first time I got a good grade, my mother said ‘Good Job’. From that day on, I studied like an owl to get the perfect score only to hear those words of affirmation from my parent. That did more harm than good — because when I don’t hear those words, I won’t be proud of my score.
+
+I started setting up validation expectations only to feel proud about my work.
+
+To surge ahead, abandon the incessant need for approval. So if people congratulate you, feel happy; if they don’t — move ahead.
+
+Forge a path guided by internal validation, accepting yourself — including flaws — and pursuing your goals unapologetically.
+
