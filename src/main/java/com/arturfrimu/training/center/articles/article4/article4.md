@@ -60,3 +60,11 @@ To surge ahead, abandon the incessant need for approval. So if people congratula
 
 Forge a path guided by internal validation, accepting yourself — including flaws — and pursuing your goals unapologetically.
 
+# 5. Develop Resilience
+Resilience is the cornerstone of personal growth. It entails bouncing back from setbacks, adapting to change, and persisting in the face of adversity.
+
+You’ll have to be comfortable with the idea of failing. For me, whenever I faced a setback, instead of saying ‘I lost’, I just said ‘The experiment didn’t work’.
+
+The strongest person is not the one who never lost, but the one who lost but still got back up. In your journey, there are going to be days when you don’t feel motivated, those are the days when you have to push through and come forth stronger.
+
+By developing resilience, you not only weather challenges but thrive in the midst of them.
