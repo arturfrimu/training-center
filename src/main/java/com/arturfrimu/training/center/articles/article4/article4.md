@@ -68,3 +68,26 @@ You’ll have to be comfortable with the idea of failing. For me, whenever I fac
 The strongest person is not the one who never lost, but the one who lost but still got back up. In your journey, there are going to be days when you don’t feel motivated, those are the days when you have to push through and come forth stronger.
 
 By developing resilience, you not only weather challenges but thrive in the midst of them.
+
+# 6. Focus on your habits
+
+People usually ask me
+
+“How did you know about your business?”
+
+Well, I didn’t. I had always been a spokesperson for productivity and had been using Notion for years. I was a writer
+since the age of 10 and even wrote a poetry book. But I never thought of intersecting the two interests.
+
+One day my classmate said “Your templates are so good, I would pay you for them”
+
+Ofc, he was joking but that one sentence I’ll never forget. That was the day I took my Notion board and published it for
+free — within the first day I had 7 downloads.
+
+You have to focus on your skills and the things that make you happy.
+
+Here is the perfect representation of what can help you make passive income. What is something
+
+You’re good at
+What people will pay you for
+What is trending/in business
+The moment you find the answer to these — you’ve taken the first step in the path.
