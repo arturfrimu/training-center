@@ -91,3 +91,18 @@ You’re good at
 What people will pay you for
 What is trending/in business
 The moment you find the answer to these — you’ve taken the first step in the path.
+
+# 7. Grow a network
+
+Being mysterious and a lone wolf can only get you so far. I used to be so introverted. I had fewer friends and rarely
+hung out with people. I liked my own company. But when I started sharing my experiences online, so many people reached
+out. We created a group to interact and boost each other in any way possible.
+
+It was the best circle I had been a part of.
+
+Don’t let your geography keep you from meeting the right people
+
+Portugal, Mexico, France, Austin, etc, I talked to people from all these places and many more. We spent hours talking
+about our interests, and our motivations and sharing ideas.
+
+As you grow your network, you’ll realize the importance of having the right support.
