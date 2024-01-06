@@ -106,3 +106,29 @@ Portugal, Mexico, France, Austin, etc, I talked to people from all these places 
 about our interests, and our motivations and sharing ideas.
 
 As you grow your network, you’ll realize the importance of having the right support.
+
+# 8. Embrace the journey
+
+Finding meaning in life is not achieving specific goals or milestones, but rather embracing the journey itself. This
+means finding joy in the process of growth and self-discovery, rather than focusing solely on the destination.
+
+You need to cultivate a sense of curiosity and wonder about the world, and approach each day with a sense of adventure
+and possibility. Most people become unhappy in their mid-twenties because they feel aimless. From a young age, our
+purposes and goals were defined for you
+
+Go through school
+Get good grades
+Get into a good college
+Get a degree
+Get a job
+By your mid-twenties, you are probably done with this cycle and then you are confused because you cannot think for
+yourself anymore. You have no one to tell you what to do and you think the rest of your life is doing that job and
+aiming for promotions. You need to embrace that life is all about learning and finding new things. Don’t let a set of
+rules decide what you can do with your life.
+
+At the end, there is one last thing I want to say:
+
+Climb mountains not so the world can see you, but so you can see the world — David McCullough Jr.
+
+When you’re aiming to be better, try to be better than the person you are tomorrow. Work hard, give up the thought of
+fear, and reach for your goals to make yourself proud.
