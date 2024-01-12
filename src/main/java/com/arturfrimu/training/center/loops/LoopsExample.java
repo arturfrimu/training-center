@@ -5,5 +5,12 @@ public class LoopsExample {
         for (int i = 1; i <= 10; i++) {
             System.out.println(i);
         }
+
+        int nr = 0;
+
+        while (nr < 10) {
+            System.out.println(nr);
+            nr++;
+        }
     }
 }
