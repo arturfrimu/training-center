@@ -7,10 +7,12 @@ public class LoopsExample {
         }
 
         int nr = 0;
-
         while (nr < 10) {
-            System.out.println(nr);
-            nr++;
+            System.out.println(nr++);
         }
+
+        do {
+            System.out.println(nr--);
+        } while (nr > 0);
     }
 }
