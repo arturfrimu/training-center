@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import static java.util.Collections.emptyList;
 import static java.util.Optional.empty;
@@ -20,18 +21,16 @@ public class AddressService {
 
     public List<Address> findAllAddressesByStreet(String street) {
         List<Address> allAddresses = addressRepository.findAll();
-
-        // TODO: 25.09.2023
-
-        return emptyList();
+        return allAddresses.stream()
+                .filter(address -> address.getStreet().toLowerCase().equals(street.toLowerCase()))
+                .collect(Collectors.toList());
     }
 
     public List<Address> findAllAddressesByStreetContaining(String street) {
         List<Address> allAddresses = addressRepository.findAll();
-
-        // TODO: 25.09.2023
-
-        return emptyList();
+        return allAddresses.stream()
+                .filter(address -> address.getStreet().toLowerCase().contains(street.toLowerCase()))
+                .collect(Collectors.toList());
     }
 
     public List<Address> findAllAddressesByStreetNumberBetween(int firstNumber, int secondNumber) {
