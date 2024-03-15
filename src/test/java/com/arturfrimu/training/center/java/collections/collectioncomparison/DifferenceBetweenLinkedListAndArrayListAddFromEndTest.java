@@ -1,4 +1,4 @@
-package com.arturfrimu.training.center.java.collectioncomparison;
+package com.arturfrimu.training.center.java.collections.collectioncomparison;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.Random;
 
 @Slf4j
-class DifferenceBetweenLinkedListAndArrayListAddFromBeginTest {
+class DifferenceBetweenLinkedListAndArrayListAddFromEndTest {
     private static final LinkedList<Long> linkedList = new LinkedList<>();
     private static final ArrayList<Long> arrayList = new ArrayList<>();
 
@@ -23,12 +23,12 @@ class DifferenceBetweenLinkedListAndArrayListAddFromBeginTest {
 
 //    @Test
     void testAddingPerformance() {
-        int addNext = 10_000;
+        int addNext = 10_000_000;
 
         long startTimeForLinkedList = System.nanoTime();
 
         for (int i = 0; i < addNext; i++) {
-            linkedList.add(0, random.nextLong());
+            linkedList.add(random.nextLong());
         }
 
         long endTimeForLinkedList = System.nanoTime();
@@ -37,7 +37,7 @@ class DifferenceBetweenLinkedListAndArrayListAddFromBeginTest {
         long startTimeForArrayList = System.nanoTime();
 
         for (int i = 0; i < addNext; i++) {
-            arrayList.add(0, random.nextLong());
+            arrayList.add(random.nextLong());
         }
 
         long endTimeForArrayList = System.nanoTime();

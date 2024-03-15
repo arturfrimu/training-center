@@ -1,4 +1,4 @@
-package com.arturfrimu.training.center.java.collectioncomparison;
+package com.arturfrimu.training.center.java.collections.collectioncomparison;
 
 import lombok.extern.slf4j.Slf4j;
 
