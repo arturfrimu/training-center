@@ -39,10 +39,12 @@
 # Structura requesturilor
 
 # Team
+
 1. /teams - GET
-Descriere: Returnează toate echipele de fotbal.
-Cod de status: 200 OK
-Structura JSON în răspuns:
+   Descriere: Returnează toate echipele de fotbal.
+   Cod de status: 200 OK
+   Structura JSON în răspuns:
+
 ```json
 [
   {
@@ -60,11 +62,11 @@ Structura JSON în răspuns:
 ]
 ```
 
-
 2. /team/{id} - GET
-Descriere: Returnează o echipă specifică de fotbal pe baza ID-ului.
-Cod de status: 200 OK
-Structura JSON în răspuns:
+   Descriere: Returnează o echipă specifică de fotbal pe baza ID-ului.
+   Cod de status: 200 OK
+   Structura JSON în răspuns:
+
 ```json
 {
   "id": 1,
@@ -88,9 +90,8 @@ Body cerere:
 }
 ```
 
-
 4. /team/{id} - PUT
-Descriere: Actualizează detaliile unei echipe specifice de fotbal pe baza ID-ului său.
+   Descriere: Actualizează detaliile unei echipe specifice de fotbal pe baza ID-ului său.
 
 Cod de status HTTP: 200 OK pentru actualizare reușită, 404 Not Found dacă echipa cu ID-ul specificat nu există.
 
@@ -116,14 +117,14 @@ Structura corpului răspunsului:
 ```
 
 5. /team/{id} - DELETE
-Descriere: Elimină o echipă de fotbal specifică pe baza ID-ului său.
+   Descriere: Elimină o echipă de fotbal specifică pe baza ID-ului său.
 
 Cod de status HTTP: 204 No Content la ștergere reușită, 404 Not Found dacă echipa cu ID-ul specificat nu există.
 
 Răspuns: Această cerere, de obicei, nu are un corp al răspunsului. Codul de status indică rezultatul operațiunii.
 
 6. /teams/{teamId}/players - GET
-Descriere: Returnează toți jucătorii care aparțin unei echipe specifice de fotbal.
+   Descriere: Returnează toți jucătorii care aparțin unei echipe specifice de fotbal.
 
 Cod de status HTTP: 200 OK
 
@@ -148,8 +149,8 @@ Structura corpului răspunsului:
 ]
 ```
 
-
 # Player
+
 1. /players - GET
    Descriere: Returnează toți jucătorii.
 
@@ -159,21 +160,20 @@ Structura corpului răspunsului:
 
 ```json
 [
-{
-"id": 1,
-"name": "Nume Jucător 1",
-"position": "Poziția Jucătorului",
-"teamId": "ID-ul echipei"
-},
-{
-"id": 2,
-"name": "Nume Jucător 2",
-"position": "Poziția Jucătorului",
-"teamId": "ID-ul echipei"
-}
+  {
+    "id": 1,
+    "name": "Nume Jucător 1",
+    "position": "Poziția Jucătorului",
+    "teamId": "ID-ul echipei"
+  },
+  {
+    "id": 2,
+    "name": "Nume Jucător 2",
+    "position": "Poziția Jucătorului",
+    "teamId": "ID-ul echipei"
+  }
 ]
 ```
-
 
 2. /player/{id} - GET
    Descriere: Returnează un jucător specific pe baza ID-ului său.
@@ -184,10 +184,10 @@ Structura corpului răspunsului:
 
 ```json
 {
-"id": "ID-ul jucătorului",
-"name": "Nume Jucător",
-"position": "Poziția Jucătorului",
-"teamId": "ID-ul echipei din care face parte jucătorul"
+  "id": "ID-ul jucătorului",
+  "name": "Nume Jucător",
+  "position": "Poziția Jucătorului",
+  "teamId": "ID-ul echipei din care face parte jucătorul"
 }
 ```
 
@@ -200,12 +200,11 @@ Structura corpului cererii:
 
 ```json
 {
-"name": "Nume Jucător Nou",
-"position": "Poziția Jucătorului",
-"teamId": "ID-ul echipei la care va fi adăugat"
+  "name": "Nume Jucător Nou",
+  "position": "Poziția Jucătorului",
+  "teamId": "ID-ul echipei la care va fi adăugat"
 }
 ```
-
 
 4. /player/{id} - PUT
    Descriere: Actualizează detaliile unui jucător specific pe baza ID-ului său.
@@ -216,27 +215,152 @@ Structura corpului cererii:
 
 ```json
 {
-"name": "Nume Jucător Actualizat",
-"position": "Poziția Actualizată",
-"teamId": "ID-ul echipei actualizate"
+  "name": "Nume Jucător Actualizat",
+  "position": "Poziția Actualizată",
+  "teamId": "ID-ul echipei actualizate"
 }
 ```
+
 Structura corpului răspunsului:
 
 ```json
 {
-"id": "ID-ul jucătorului actualizat",
-"name": "Nume Jucător Actualizat",
-"position": "Poziția Actualizată",
-"teamId": "ID-ul echipei actualizate"
+  "id": "ID-ul jucătorului actualizat",
+  "name": "Nume Jucător Actualizat",
+  "position": "Poziția Actualizată",
+  "teamId": "ID-ul echipei actualizate"
 }
 ```
-
 
 5. /player/{id} - DELETE
    Descriere: Elimină un jucător specific pe baza ID-ului său din echipă.
 
 Cod de status HTTP: 204 No Content la ștergere reușită, 404 Not Found dacă jucătorul cu ID-ul specificat nu există.
+
+Răspuns: Această cerere, de obicei, nu are un corp al răspunsului. Codul de status indică rezultatul operațiunii.
+
+# Matches
+
+1. /matches - GET
+   Descriere: Returnează toate meciurile de fotbal.
+
+Cod de status HTTP: 200 OK
+
+Structura corpului răspunsului:
+
+```json
+[
+  {
+    "id": 1,
+    "teamA": "Nume Echipa A",
+    "teamB": "Nume Echipa B",
+    "date": "Data Meciului",
+    "location": "Locația Meciului"
+  },
+  {
+    "id": 2,
+    "teamA": "Nume Echipa A",
+    "teamB": "Nume Echipa B",
+    "date": "Data Meciului",
+    "location": "Locația Meciului"
+  }
+]
+```
+
+2. /match/{id} - GET
+   Descriere: Returnează detaliile unui meci specific pe baza ID-ului său.
+
+Cod de status HTTP: 200 OK
+
+Structura corpului răspunsului:
+
+```json
+{
+  "id": "ID-ul Meciului",
+  "teamA": "Nume Echipa A",
+  "teamB": "Nume Echipa B",
+  "date": "Data Meciului",
+  "location": "Locația Meciului",
+  "score": "Scorul Meciului (opțional)"
+}
+```
+
+3. /matches/upcoming - GET
+   Descriere: Returnează toate meciurile viitoare de fotbal.
+
+Cod de status HTTP: 200 OK
+
+Structura corpului răspunsului:
+
+```json
+[
+  {
+    "id": 1,
+    "teamA": "Nume Echipa A",
+    "teamB": "Nume Echipa B",
+    "date": "Data viitoare a meciului",
+    "location": "Locația Meciului"
+  }
+]
+```
+
+4. /matches/results - GET
+   Descriere: Returnează rezultatele meciurilor trecute de fotbal.
+
+Cod de status HTTP: 200 OK
+
+Structura corpului răspunsului:
+
+```json
+[
+  {
+    "id": 1,
+    "teamA": "Nume Echipa A",
+    "teamB": "Nume Echipa B",
+    "date": "Data Meciului",
+    "location": "Locația Meciului",
+    "score": "Scorul final al meciului"
+  }
+]
+```
+
+5. /matches - POST
+   Descriere: Programează un nou meci de fotbal.
+
+Cod de status HTTP: 201 Created
+
+Structura corpului cererii:
+
+```json
+{
+  "teamA": "Nume Echipa A",
+  "teamB": "Nume Echipa B",
+  "date": "Data Meciului",
+  "location": "Locația Meciului"
+}
+```
+
+6. /match/{id} - PUT
+   Descriere: Actualizează detaliile unui meci de fotbal specific pe baza ID-ului său.
+
+Cod de status HTTP: 200 OK pentru actualizare reușită, 404 Not Found dacă meciul cu ID-ul specificat nu există.
+
+Structura corpului cererii:
+
+```json
+{
+  "teamA": "Nume Echipa A Actualizat",
+  "teamB": "Nume Echipa B Actualizat",
+  "date": "Data Actualizată a Meciului",
+  "location": "Locația Actualizată",
+  "score": "Scorul Actualizat (opțional)"
+}
+```
+
+7. /match/{id} - DELETE
+   Descriere: Anulează un meci de fotbal programat pe baza ID-ului său.
+
+Cod de status HTTP: 204 No Content la anulare reușită, 404 Not Found dacă meciul cu ID-ul specificat nu există.
 
 Răspuns: Această cerere, de obicei, nu are un corp al răspunsului. Codul de status indică rezultatul operațiunii.
 
