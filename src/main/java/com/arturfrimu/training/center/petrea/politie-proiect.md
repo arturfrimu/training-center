@@ -1,14 +1,14 @@
-Sigur, iată descrierile scurte pentru URL-urile menționate:
+# API
 
 /drivers/{driverId}/vehicles/add - POST: Asociază un nou vehicul cu un șofer specific.
 /drivers - GET  - Descriere: Returnează o listă cu toți șoferii înregistrați în sistem.
+/drivers/{driverId}/violations/add - POST: Înregistrează o nouă încălcare pentru un șofer specific.
 /drivers/{driverId} - GET: Returnează detalii despre un șofer specific.
 /drivers/{driverId}/violations - GET: Returnează toate încălcările asociate cu un șofer specific.
 /drivers/{driverId}/vehicles - GET: Returnează toate vehiculele asociate cu un șofer specific.
 /drivers/{driverId}/vehicles/{vehicleId} - DELETE: Disociază un vehicul de un șofer specific.
 /drivers/{driverId}/update - PUT: Actualizează detalii despre un șofer specific.
 /drivers/{driverId}/delete - DELETE: Elimină un șofer specific din sistem.
-/drivers/{driverId}/violations/add - POST: Înregistrează o nouă încălcare pentru un șofer specific.
 /drivers/search - GET: Caută șoferi pe baza unor criterii specifice (de exemplu, nume, număr permis).
 
 /vehicles/{vehicleId}/violations/add - POST: Înregistrează o nouă încălcare pentru un vehicul specific.
