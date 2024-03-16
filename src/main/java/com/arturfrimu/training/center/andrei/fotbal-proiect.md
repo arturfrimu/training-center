@@ -148,3 +148,95 @@ Structura corpului răspunsului:
 ]
 ```
 
+
+# Player
+1. /players - GET
+   Descriere: Returnează toți jucătorii.
+
+Cod de status HTTP: 200 OK
+
+Structura corpului răspunsului:
+
+```json
+[
+{
+"id": 1,
+"name": "Nume Jucător 1",
+"position": "Poziția Jucătorului",
+"teamId": "ID-ul echipei"
+},
+{
+"id": 2,
+"name": "Nume Jucător 2",
+"position": "Poziția Jucătorului",
+"teamId": "ID-ul echipei"
+}
+]
+```
+
+
+2. /player/{id} - GET
+   Descriere: Returnează un jucător specific pe baza ID-ului său.
+
+Cod de status HTTP: 200 OK
+
+Structura corpului răspunsului:
+
+```json
+{
+"id": "ID-ul jucătorului",
+"name": "Nume Jucător",
+"position": "Poziția Jucătorului",
+"teamId": "ID-ul echipei din care face parte jucătorul"
+}
+```
+
+3. /players - POST
+   Descriere: Adaugă un nou jucător unei echipe.
+
+Cod de status HTTP: 201 Created
+
+Structura corpului cererii:
+
+```json
+{
+"name": "Nume Jucător Nou",
+"position": "Poziția Jucătorului",
+"teamId": "ID-ul echipei la care va fi adăugat"
+}
+```
+
+
+4. /player/{id} - PUT
+   Descriere: Actualizează detaliile unui jucător specific pe baza ID-ului său.
+
+Cod de status HTTP: 200 OK pentru actualizare reușită, 404 Not Found dacă jucătorul cu ID-ul specificat nu există.
+
+Structura corpului cererii:
+
+```json
+{
+"name": "Nume Jucător Actualizat",
+"position": "Poziția Actualizată",
+"teamId": "ID-ul echipei actualizate"
+}
+```
+Structura corpului răspunsului:
+
+```json
+{
+"id": "ID-ul jucătorului actualizat",
+"name": "Nume Jucător Actualizat",
+"position": "Poziția Actualizată",
+"teamId": "ID-ul echipei actualizate"
+}
+```
+
+
+5. /player/{id} - DELETE
+   Descriere: Elimină un jucător specific pe baza ID-ului său din echipă.
+
+Cod de status HTTP: 204 No Content la ștergere reușită, 404 Not Found dacă jucătorul cu ID-ul specificat nu există.
+
+Răspuns: Această cerere, de obicei, nu are un corp al răspunsului. Codul de status indică rezultatul operațiunii.
+
