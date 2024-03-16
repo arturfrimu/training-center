@@ -1,0 +1,84 @@
+/teams - GET: Retrieve all football teams.
+
+/team/{id} - GET: Retrieve a specific football team by its ID.
+
+/teams - POST: Add a new football team.
+
+/team/{id} - PUT: Update details of a specific football team.
+
+/team/{id} - DELETE: Remove a football team.
+
+/teams/{teamId}/players - GET: Retrieve all players belonging to a specific team.
+
+/players - GET: Retrieve all players.
+
+/player/{id} - GET: Retrieve a specific player by their ID.
+
+/players - POST: Add a new player to a team.
+
+/player/{id} - PUT: Update details of a specific player.
+
+/player/{id} - DELETE: Remove a player from a team.
+
+/matches - GET: Retrieve all football matches.
+
+/match/{id} - GET: Retrieve details of a specific match by its ID.
+
+/matches/upcoming - GET: Retrieve all upcoming football matches.
+
+/matches/results - GET: Retrieve results of past football matches.
+
+/matches - POST: Schedule a new football match.
+
+/match/{id} - PUT: Update details of a specific football match.
+
+/match/{id} - DELETE: Cancel a scheduled football match.
+
+
+
+1. /teams - GET
+Descriere: Returnează toate echipele de fotbal.
+Cod de status: 200 OK
+Structura JSON în răspuns:
+[
+  {
+    "id": 1,
+    "name": "Echipa A",
+    "founded": "1901",
+    "stadium": "Stadion A"
+  },
+  {
+    "id": 2,
+    "name": "Echipa B",
+    "founded": "1902",
+    "stadium": "Stadion B"
+  }
+]
+
+
+2. /team/{id} - GET
+Descriere: Returnează o echipă specifică de fotbal pe baza ID-ului.
+Cod de status: 200 OK
+Structura JSON în răspuns:
+
+{
+  "id": 1,
+  "name": "Echipa A",
+  "founded": "1901",
+  "stadium": "Stadion A"
+}
+
+
+3. /teams - POST
+
+Descriere: Adaugă o nouă echipă de fotbal.
+Cod de status: 201 Created
+Body cerere:
+
+{
+  "name": "Echipa Nouă",
+  "founded": "1920",
+  "stadium": "Stadion Nou"
+}
+
+
